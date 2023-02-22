@@ -14,11 +14,12 @@ import {
 } from '@mantine/core'
 import { IconBolt, IconBrandGithub, IconConfetti } from '@tabler/icons-react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
+import packageJson from '../../package.json'
 import { GradientBackground } from '../components/GradientBackground'
-import packageJson from '../package.json'
 
-export const App: React.FC = () => {
+export const Index: React.FC = () => {
   return (
     <AppShell>
       <GradientBackground />
@@ -28,6 +29,8 @@ export const App: React.FC = () => {
         opened
         onClose={() => false}
         withCloseButton={false}
+        closeOnEscape={false}
+        closeOnClickOutside={false}
         size="lg"
         radius="lg"
       >
@@ -41,7 +44,7 @@ export const App: React.FC = () => {
           <Space />
 
           <Group spacing="lg" position="center">
-            <Card
+            <div
               css={css`
                 display: inline-block;
                 & {
@@ -53,7 +56,7 @@ export const App: React.FC = () => {
                 }
               `}
             >
-              <Card.Section>
+              <Link to="/audience">
                 <Button
                   size="md"
                   leftIcon={<IconConfetti size={24} />}
@@ -62,9 +65,9 @@ export const App: React.FC = () => {
                 >
                   <Text>観客として参加</Text>
                 </Button>
-              </Card.Section>
-            </Card>
-            <Card
+              </Link>
+            </div>
+            <div
               css={css`
                 display: inline-block;
                 & {
@@ -76,7 +79,7 @@ export const App: React.FC = () => {
                 }
               `}
             >
-              <Card.Section>
+              <Link to="/booth">
                 <Button
                   size="md"
                   leftIcon={<IconBolt size={24} />}
@@ -85,8 +88,8 @@ export const App: React.FC = () => {
                 >
                   <Text>VJ として参加</Text>
                 </Button>
-              </Card.Section>
-            </Card>
+              </Link>
+            </div>
           </Group>
 
           <Center>
