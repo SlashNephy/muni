@@ -1,15 +1,17 @@
-name: 'Check Node'
+name: 'Check Frontend'
 
 on:
   push:
     branches:
       - 'master'
-
+    paths:
+      - 'frontend/**'
   pull_request:
     types:
       - opened
       - synchronize
-
+    paths:
+      - 'frontend/**'
   workflow_dispatch:
 
 jobs:
