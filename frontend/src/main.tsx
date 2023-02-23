@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import { Audience } from './routes/Audience'
 import { Booth } from './routes/Booth'
+import { Error } from './routes/Error'
 // noinspection ES6PreferShortImport
 import { Index } from './routes/Index'
 
@@ -12,14 +13,17 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Index />,
+    errorElement: <Error />,
   },
   {
     path: '/audience',
     element: <Audience />,
+    errorElement: <Error />,
   },
   {
     path: '/booth',
     element: <Booth />,
+    errorElement: <Error />,
   },
 ])
 
