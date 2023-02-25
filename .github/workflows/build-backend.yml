@@ -21,5 +21,6 @@ jobs:
   build:
     uses: SlashNephy/.github/.github/workflows/docker-build.yml@master
     with:
+      context: backend
       image-name: ghcr.io/slashnephy/muni-server
-      image-platforms: linux/amd64
+      image-platforms: linux/amd64,linux/arm64
