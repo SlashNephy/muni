@@ -1,0 +1,37 @@
+{
+  "name": "muni-pb",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SlashNephy/muni"
+  },
+  "scripts": {
+    "format": "concurrently -n format: -m 1 'yarn:format:*'",
+    "format:eslint": "yarn lint:eslint --fix",
+    "format:prettier": "yarn lint:prettier --write",
+    "generate": "concurrently -n generate: 'yarn:generate:*'",
+    "generate:go": "protoc --go_out=paths=source_relative:'../backend' pb/*.proto",
+    "generate:typescript": "protoc --grpc-web_out='import_style=typescript,mode=grpcwebtext:../frontend/src' pb/*.proto",
+    "lint": "concurrently -n lint: 'yarn:lint:*'",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier --check .",
+    "prepare": "concurrently -n prepare: 'yarn:prepare:*'",
+    "prepare:protoc-gen-go": "which protoc-gen-go || go install google.golang.org/protobuf/cmd/protoc-gen-go@latest",
+    "prepare:protoc-gen-go-grpc": "which protoc-gen-go-grpc || go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest",
+    "prepare:protoc-gen-grpc-web": "which protoc-gen-grpc-web || brew install protoc-gen-grpc-web"
+  },
+  "devDependencies": {
+    "@slashnephy/eslint-config": "0.2.43",
+    "@slashnephy/prettier-config": "0.1.12",
+    "concurrently": "7.6.0",
+    "eslint": "8.33.0",
+    "prettier": "2.8.4",
+    "typescript": "4.9.5"
+  },
+  "packageManager": "yarn@3.3.1",
+  "eslintConfig": {
+    "extends": [
+      "@slashnephy/eslint-config"
+    ]
+  }
+}

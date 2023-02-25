@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package muni;
+option go_package = "github.com/SlashNephy/muni/backend/pb";
+
+import "google/protobuf/empty.proto";
+
+service RoomService {
+  rpc ListRooms(google.protobuf.Empty) returns (ListRoomsResponse) {}
+}
+
+message ListRoomsResponse {
+  repeated Room room = 1;
+}
+
+message Room {
+  string id = 1;
+  string name = 2;
+  AuthenticationMode authentication = 3;
+}
+
+enum AuthenticationMode {
+  None = 0;
+  Password = 1;
+}
