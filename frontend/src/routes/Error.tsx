@@ -1,4 +1,5 @@
-import { Center, Code, Modal, Space, Stack, Title } from '@mantine/core'
+import { Center, Code, Modal, Space, Stack, Title, Text } from '@mantine/core'
+import { IconFileAlert } from '@tabler/icons-react'
 import React from 'react'
 import { useRouteError } from 'react-router-dom'
 
@@ -22,14 +23,22 @@ export const Error: React.FC = () => {
         radius="lg"
       >
         <Stack>
-          <Title align="center">エラーが発生しました</Title>
+          <Title align="center">
+            <IconFileAlert />
+            エラーが発生しました
+          </Title>
 
           <Space />
 
           <Center>
-            <Code color="red" block>
-              {error?.toString()}
-            </Code>
+            <Stack>
+              <Text>
+                バグレポートを行う場合は、開発者に以下の情報を送信してください。
+              </Text>
+              <Code color="red" block>
+                {error?.toString()}
+              </Code>
+            </Stack>
           </Center>
         </Stack>
       </Modal>
