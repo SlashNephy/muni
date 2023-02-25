@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM golang:1.19-bullseye AS build
+FROM golang:1.19.6-bullseye AS build
 WORKDIR /app
 
 COPY go.mod go.sum ./
@@ -8,7 +8,7 @@ RUN go mod download
 COPY ./ ./
 RUN make build
 
-FROM debian:bullseye-slim
+FROM debian:bullseye-slim AS production
 WORKDIR /app
 
 RUN groupadd -g 1000 app && useradd -u 1000 -g app app
@@ -21,3 +21,8 @@ RUN apt-get update \
 USER app
 COPY --from=build /app/muni-backend ./
 CMD ["./muni-backend"]
+
+FROM golang:1.19.6-bullseye AS development
+WORKDIR /app
+
+CMD ["make", "dev"]

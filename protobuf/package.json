@@ -9,17 +9,9 @@
     "format": "concurrently -n format: -m 1 'yarn:format:*'",
     "format:eslint": "yarn lint:eslint --fix",
     "format:prettier": "yarn lint:prettier --write",
-    "generate": "concurrently -n generate: 'yarn:generate:*'",
-    "generate:go": "protoc --go_out=paths=source_relative:'../backend' pb/*.proto",
-    "generate:go-grpc": "protoc --go-grpc_out=paths=source_relative:'../backend' pb/*.proto",
-    "generate:grpc-web": "protoc --grpc-web_out='import_style=typescript,mode=grpcwebtext:../frontend/src' pb/*.proto",
     "lint": "concurrently -n lint: 'yarn:lint:*'",
     "lint:eslint": "eslint .",
-    "lint:prettier": "prettier --check .",
-    "prepare": "concurrently -n prepare: 'yarn:prepare:*'",
-    "prepare:protoc-gen-go": "which protoc-gen-go || go install google.golang.org/protobuf/cmd/protoc-gen-go@latest",
-    "prepare:protoc-gen-go-grpc": "which protoc-gen-go-grpc || go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest",
-    "prepare:protoc-gen-grpc-web": "which protoc-gen-grpc-web || brew install protoc-gen-grpc-web"
+    "lint:prettier": "prettier --check ."
   },
   "devDependencies": {
     "@slashnephy/eslint-config": "0.2.43",

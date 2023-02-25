@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: backend
+      target: development
+    ports:
+      - '7080:7080/tcp'
+    environment:
+      PORT: '7080'
+    volumes:
+      - ./backend:/app:ro
+
+  frontend:
+    build:
+      context: frontend
+      target: development
+    ports:
+      - '7070:7070/tcp'
+    environment:
+      PORT: '7070'
+    volumes:
+      - ./frontend/.yarn/plugins:/app/.yarn/plugins:ro
+      - ./frontend/.yarn/releases:/app/.yarn/releases:ro
+      - ./frontend/public:/app/public:ro
+      - ./frontend/src:/app/src:ro
+      - ./frontend/index.html:/app/index.html:ro
+      - ./frontend/package.json:/app/package.json:ro
+      - ./frontend/tsconfig.json:/app/tsconfig.json:ro
+      - ./frontend/tsconfig.node.json:/app/tsconfig.node.json:ro
+      - ./frontend/vite.config.ts:/app/vite.config.ts:ro
+      - ./frontend/yarn.lock:/app/yarn.lock:ro
+      - ./frontend/.yarnrc.yml:/app/.yarnrc.yml:ro
+      - frontend-yarn-cache:/app/.yarn/cache
+      - frontend-node-modules:/app/node_modules
+
+  protobuf:
+    build:
+      context: protobuf
+      target: development
+    volumes:
+      - ./protobuf:/app:ro
+      - ./backend/pb:/backend/pb
+      - ./frontend/src/pb:/frontend/src/pb
+
+volumes:
+  frontend-yarn-cache:
+    driver: local
+  frontend-node-modules:
+    driver: local
