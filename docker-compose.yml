@@ -12,6 +12,14 @@ services:
     volumes:
       - ./backend:/app:ro
 
+  envoy:
+    image: envoyproxy/envoy:v1.25.1
+    ports:
+      - '7090:7090/tcp'
+      - '7091:7091/tcp'
+    volumes:
+      - ./backend/envoy.yaml:/etc/envoy/envoy.yaml:ro
+
   frontend:
     build:
       context: frontend
@@ -20,6 +28,7 @@ services:
       - '7070:7070/tcp'
     environment:
       PORT: '7070'
+      VITE_BACKEND_ORIGIN: 'http://localhost:7090'
     volumes:
       - ./frontend/.yarn/plugins:/app/.yarn/plugins:ro
       - ./frontend/.yarn/releases:/app/.yarn/releases:ro

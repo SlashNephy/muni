@@ -9,7 +9,7 @@ import (
 )
 
 type Config struct {
-	IsDebug bool `env:"debug"`
+	Port uint16 `env:"PORT" envDefault:"7080"`
 }
 
 func LoadConfig() (*Config, error) {
@@ -29,12 +29,19 @@ func LoadConfig() (*Config, error) {
 }
 
 func loadDotEnv(path string) error {
-	_, err := os.Stat(path)
-
 	// ファイルが存在する場合のみ読み込む
-	if !os.IsNotExist(err) {
-		return godotenv.Load(path)
+	if !fileExists(path) {
+		return nil
 	}
 
-	return err
+	return godotenv.Load(path)
+}
+
+func fileExists(path string) bool {
+	info, err := os.Stat(path)
+	if err != nil {
+		return false
+	}
+
+	return !info.IsDir()
 }

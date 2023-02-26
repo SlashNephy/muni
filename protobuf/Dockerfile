@@ -1,11 +1,9 @@
-FROM golang:1.19.6-bullseye AS development
+FROM namely/protoc-all:1.51_1 AS development
 WORKDIR /app
 
-RUN apt update \
-    && apt install -y --no-install-recommends protobuf-compiler unzip \
-    && curl -o /tmp/protoc.zip -L https://github.com/protocolbuffers/protobuf/releases/download/v22.0/protoc-22.0-linux-aarch_64.zip \
-    && cd /tmp \
-    && unzip /tmp/protoc.zip \
-    && mv include/* /usr/include/
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
+    && apt install -y nodejs \
+    && npm i @protobuf-ts/plugin -g --force \
+    && curl -L https://github.com/cespare/reflex/releases/download/v0.3.1/reflex_linux_amd64.tar.gz | tar -zx --strip-components=1 -C /usr/local/bin
 
-CMD ["make", "watch"]
+ENTRYPOINT ["reflex", "-r", "(\\.proto|compile\\.sh)$", "-s", "./compile.sh"]

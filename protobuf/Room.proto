@@ -3,14 +3,15 @@ syntax = "proto3";
 package muni;
 option go_package = "github.com/SlashNephy/muni/backend/pb";
 
-import "google/protobuf/empty.proto";
-
 service RoomService {
-  rpc ListRooms(google.protobuf.Empty) returns (ListRoomsResponse) {}
+  rpc ListRooms(ListRoomsRequest) returns (ListRoomsResponse) {}
+}
+
+message ListRoomsRequest {
 }
 
 message ListRoomsResponse {
-  repeated Room room = 1;
+  repeated Room rooms = 1;
 }
 
 message Room {
