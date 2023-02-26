@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package muni;
+option go_package = "github.com/SlashNephy/muni/backend/pb";
+
+service FloorService {
+  rpc ListFloors(ListFloorsRequest) returns (ListFloorsResponse) {}
+  rpc JoinFloor(JoinFloorRequest) returns (JoinFloorResponse) {}
+}
+
+message ListFloorsRequest {
+}
+
+message ListFloorsResponse {
+  repeated Floor floors = 1;
+}
+
+message JoinFloorRequest {
+  string floor_id = 1;
+}
+
+message JoinFloorResponse {
+}
+
+message Floor {
+  string id = 1;
+  string name = 2;
+  Host host = 3;
+  AuthenticationMode authentication = 4;
+}
+
+message Host {
+  string name = 1;
+}
+
+enum AuthenticationMode {
+  None = 0;
+  Password = 1;
+}

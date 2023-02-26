@@ -7,15 +7,15 @@ import (
 )
 
 type server struct {
-	pb.UnimplementedRoomServiceServer
+	pb.UnimplementedFloorServiceServer
 }
 
-func (s *server) ListRooms(ctx context.Context, _ *pb.ListRoomsRequest) (*pb.ListRoomsResponse, error) {
-	return &pb.ListRoomsResponse{
-		Rooms: []*pb.Room{
+func (s *server) ListFloors(ctx context.Context, _ *pb.ListFloorsRequest) (*pb.ListFloorsResponse, error) {
+	return &pb.ListFloorsResponse{
+		Floors: []*pb.Floor{
 			{
 				Id:             "abc-def-ghi",
-				Name:           "test room",
+				Name:           "test floor",
 				Authentication: pb.AuthenticationMode_None,
 			},
 		},

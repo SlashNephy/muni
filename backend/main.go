@@ -36,7 +36,7 @@ func main() {
 			tagsMiddleware.StreamServerInterceptor(),
 		)),
 	)
-	pb.RegisterRoomServiceServer(s, &server{})
+	pb.RegisterFloorServiceServer(s, &server{})
 
 	go func() {
 		if err = s.Serve(listener); err != nil {
