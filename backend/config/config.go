@@ -1,4 +1,4 @@
-package main
+package config
 
 import (
 	"flag"
@@ -12,7 +12,7 @@ type Config struct {
 	Port uint16 `env:"PORT" envDefault:"7080"`
 }
 
-func LoadConfig() (*Config, error) {
+func Load() (*Config, error) {
 	envFile := flag.String("env-file", ".env", "path to .env file")
 	flag.Parse()
 
