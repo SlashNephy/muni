@@ -1,5 +1,5 @@
 import React from 'react'
 
-export const Booth: React.FC = () => {
+export const FloorsNew: React.FC = () => {
   return <></>
 }

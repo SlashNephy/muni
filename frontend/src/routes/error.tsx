@@ -37,7 +37,9 @@ export const ErrorReport: React.FC = () => {
               </Text>
               <Code color="red" block>
                 {error?.toString()}
-                {error instanceof Error && error.stack}
+                {error !== null &&
+                  error !== undefined &&
+                  (error as Error).stack}
               </Code>
             </Stack>
           </Center>
