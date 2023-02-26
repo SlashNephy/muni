@@ -5,7 +5,7 @@ import { useRouteError } from 'react-router-dom'
 
 import { GradientBackground } from '../components/GradientBackground'
 
-export const Error: React.FC = () => {
+export const ErrorReport: React.FC = () => {
   const error = useRouteError()
 
   return (
@@ -19,7 +19,7 @@ export const Error: React.FC = () => {
         withCloseButton={false}
         closeOnEscape={false}
         closeOnClickOutside={false}
-        size="lg"
+        size="xl"
         radius="lg"
       >
         <Stack>
@@ -37,6 +37,7 @@ export const Error: React.FC = () => {
               </Text>
               <Code color="red" block>
                 {error?.toString()}
+                {error instanceof Error && error.stack}
               </Code>
             </Stack>
           </Center>

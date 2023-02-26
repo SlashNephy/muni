@@ -30,6 +30,7 @@
     "@tabler/icons-react": "2.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-query": "3.39.3",
     "react-rnd": "10.4.1",
     "react-router-dom": "6.8.1",
     "react-screen-wake-lock": "3.0.1",
