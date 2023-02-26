@@ -11,11 +11,27 @@ func (c *Controller) ListFloors(ctx context.Context, _ *pb.ListFloorsRequest) (*
 		Floors: []*pb.Floor{
 			{
 				Id:   "abc-defg-hij",
-				Name: "test floor",
+				Name: "test floor#1",
 				Host: &pb.Host{
 					Name: "Kashiwa",
 				},
-				Authentication: pb.AuthenticationMode_None,
+				Authentication: pb.Authentication_None,
+			},
+			{
+				Id:   "xxx-yyyy-zzz",
+				Name: "test floor#2",
+				Host: &pb.Host{
+					Name: "ci7lus",
+				},
+				Authentication: pb.Authentication_None,
+			},
+			{
+				Id:   "ekh-fetv-vns",
+				Name: "test floor#3",
+				Host: &pb.Host{
+					Name: "samekan",
+				},
+				Authentication: pb.Authentication_Password,
 			},
 		},
 	}, nil

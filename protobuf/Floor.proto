@@ -5,7 +5,8 @@ option go_package = "github.com/SlashNephy/muni/backend/pb";
 
 service FloorService {
   rpc ListFloors(ListFloorsRequest) returns (ListFloorsResponse) {}
-  rpc JoinFloor(JoinFloorRequest) returns (JoinFloorResponse) {}
+  rpc JoinFloor(JoinFloorRequest) returns (stream JoinFloorResponse) {}
+  rpc CreateFloor(CreateFloorRequest) returns (CreateFloorResponse) {}
 }
 
 message ListFloorsRequest {
@@ -20,20 +21,36 @@ message JoinFloorRequest {
 }
 
 message JoinFloorResponse {
+  string floor_id = 1;
+}
+
+message CreateFloorRequest {
+  string floor_name = 1;
+  Host host = 2;
+  Authentication authentication = 3;
+}
+
+message CreateFloorResponse {
+  string floor_id = 1;
 }
 
 message Floor {
   string id = 1;
   string name = 2;
   Host host = 3;
-  AuthenticationMode authentication = 4;
+  Authentication.Mode authentication = 4;
 }
 
 message Host {
   string name = 1;
 }
 
-enum AuthenticationMode {
-  None = 0;
-  Password = 1;
+message Authentication {
+  Mode mode = 1;
+  string password = 2;
+
+  enum Mode {
+    None = 0;
+    Password = 1;
+  }
 }

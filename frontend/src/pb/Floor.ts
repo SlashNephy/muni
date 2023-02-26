@@ -39,6 +39,36 @@ export interface JoinFloorRequest {
  * @generated from protobuf message muni.JoinFloorResponse
  */
 export interface JoinFloorResponse {
+    /**
+     * @generated from protobuf field: string floor_id = 1;
+     */
+    floorId: string;
+}
+/**
+ * @generated from protobuf message muni.CreateFloorRequest
+ */
+export interface CreateFloorRequest {
+    /**
+     * @generated from protobuf field: string floor_name = 1;
+     */
+    floorName: string;
+    /**
+     * @generated from protobuf field: muni.Host host = 2;
+     */
+    host?: Host;
+    /**
+     * @generated from protobuf field: muni.Authentication authentication = 3;
+     */
+    authentication?: Authentication;
+}
+/**
+ * @generated from protobuf message muni.CreateFloorResponse
+ */
+export interface CreateFloorResponse {
+    /**
+     * @generated from protobuf field: string floor_id = 1;
+     */
+    floorId: string;
 }
 /**
  * @generated from protobuf message muni.Floor
@@ -57,9 +87,9 @@ export interface Floor {
      */
     host?: Host;
     /**
-     * @generated from protobuf field: muni.AuthenticationMode authentication = 4;
+     * @generated from protobuf field: muni.Authentication.Mode authentication = 4;
      */
-    authentication: AuthenticationMode;
+    authentication: Authentication_Mode;
 }
 /**
  * @generated from protobuf message muni.Host
@@ -71,9 +101,22 @@ export interface Host {
     name: string;
 }
 /**
- * @generated from protobuf enum muni.AuthenticationMode
+ * @generated from protobuf message muni.Authentication
  */
-export enum AuthenticationMode {
+export interface Authentication {
+    /**
+     * @generated from protobuf field: muni.Authentication.Mode mode = 1;
+     */
+    mode: Authentication_Mode;
+    /**
+     * @generated from protobuf field: string password = 2;
+     */
+    password: string;
+}
+/**
+ * @generated from protobuf enum muni.Authentication.Mode
+ */
+export enum Authentication_Mode {
     /**
      * @generated from protobuf enum value: None = 0;
      */
@@ -206,19 +249,40 @@ export const JoinFloorRequest = new JoinFloorRequest$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class JoinFloorResponse$Type extends MessageType<JoinFloorResponse> {
     constructor() {
-        super("muni.JoinFloorResponse", []);
+        super("muni.JoinFloorResponse", [
+            { no: 1, name: "floor_id", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
     }
     create(value?: PartialMessage<JoinFloorResponse>): JoinFloorResponse {
-        const message = {};
+        const message = { floorId: "" };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<JoinFloorResponse>(this, message, value);
         return message;
     }
     internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: JoinFloorResponse): JoinFloorResponse {
-        return target ?? this.create();
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string floor_id */ 1:
+                    message.floorId = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
     }
     internalBinaryWrite(message: JoinFloorResponse, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string floor_id = 1; */
+        if (message.floorId !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.floorId);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -230,13 +294,121 @@ class JoinFloorResponse$Type extends MessageType<JoinFloorResponse> {
  */
 export const JoinFloorResponse = new JoinFloorResponse$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class CreateFloorRequest$Type extends MessageType<CreateFloorRequest> {
+    constructor() {
+        super("muni.CreateFloorRequest", [
+            { no: 1, name: "floor_name", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "host", kind: "message", T: () => Host },
+            { no: 3, name: "authentication", kind: "message", T: () => Authentication }
+        ]);
+    }
+    create(value?: PartialMessage<CreateFloorRequest>): CreateFloorRequest {
+        const message = { floorName: "" };
+        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
+        if (value !== undefined)
+            reflectionMergePartial<CreateFloorRequest>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: CreateFloorRequest): CreateFloorRequest {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string floor_name */ 1:
+                    message.floorName = reader.string();
+                    break;
+                case /* muni.Host host */ 2:
+                    message.host = Host.internalBinaryRead(reader, reader.uint32(), options, message.host);
+                    break;
+                case /* muni.Authentication authentication */ 3:
+                    message.authentication = Authentication.internalBinaryRead(reader, reader.uint32(), options, message.authentication);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: CreateFloorRequest, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string floor_name = 1; */
+        if (message.floorName !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.floorName);
+        /* muni.Host host = 2; */
+        if (message.host)
+            Host.internalBinaryWrite(message.host, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        /* muni.Authentication authentication = 3; */
+        if (message.authentication)
+            Authentication.internalBinaryWrite(message.authentication, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message muni.CreateFloorRequest
+ */
+export const CreateFloorRequest = new CreateFloorRequest$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class CreateFloorResponse$Type extends MessageType<CreateFloorResponse> {
+    constructor() {
+        super("muni.CreateFloorResponse", [
+            { no: 1, name: "floor_id", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<CreateFloorResponse>): CreateFloorResponse {
+        const message = { floorId: "" };
+        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
+        if (value !== undefined)
+            reflectionMergePartial<CreateFloorResponse>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: CreateFloorResponse): CreateFloorResponse {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string floor_id */ 1:
+                    message.floorId = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: CreateFloorResponse, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string floor_id = 1; */
+        if (message.floorId !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.floorId);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message muni.CreateFloorResponse
+ */
+export const CreateFloorResponse = new CreateFloorResponse$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class Floor$Type extends MessageType<Floor> {
     constructor() {
         super("muni.Floor", [
             { no: 1, name: "id", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "name", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "host", kind: "message", T: () => Host },
-            { no: 4, name: "authentication", kind: "enum", T: () => ["muni.AuthenticationMode", AuthenticationMode] }
+            { no: 4, name: "authentication", kind: "enum", T: () => ["muni.Authentication.Mode", Authentication_Mode] }
         ]);
     }
     create(value?: PartialMessage<Floor>): Floor {
@@ -260,7 +432,7 @@ class Floor$Type extends MessageType<Floor> {
                 case /* muni.Host host */ 3:
                     message.host = Host.internalBinaryRead(reader, reader.uint32(), options, message.host);
                     break;
-                case /* muni.AuthenticationMode authentication */ 4:
+                case /* muni.Authentication.Mode authentication */ 4:
                     message.authentication = reader.int32();
                     break;
                 default:
@@ -284,7 +456,7 @@ class Floor$Type extends MessageType<Floor> {
         /* muni.Host host = 3; */
         if (message.host)
             Host.internalBinaryWrite(message.host, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
-        /* muni.AuthenticationMode authentication = 4; */
+        /* muni.Authentication.Mode authentication = 4; */
         if (message.authentication !== 0)
             writer.tag(4, WireType.Varint).int32(message.authentication);
         let u = options.writeUnknownFields;
@@ -344,10 +516,65 @@ class Host$Type extends MessageType<Host> {
  * @generated MessageType for protobuf message muni.Host
  */
 export const Host = new Host$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class Authentication$Type extends MessageType<Authentication> {
+    constructor() {
+        super("muni.Authentication", [
+            { no: 1, name: "mode", kind: "enum", T: () => ["muni.Authentication.Mode", Authentication_Mode] },
+            { no: 2, name: "password", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<Authentication>): Authentication {
+        const message = { mode: 0, password: "" };
+        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
+        if (value !== undefined)
+            reflectionMergePartial<Authentication>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Authentication): Authentication {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* muni.Authentication.Mode mode */ 1:
+                    message.mode = reader.int32();
+                    break;
+                case /* string password */ 2:
+                    message.password = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Authentication, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* muni.Authentication.Mode mode = 1; */
+        if (message.mode !== 0)
+            writer.tag(1, WireType.Varint).int32(message.mode);
+        /* string password = 2; */
+        if (message.password !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.password);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message muni.Authentication
+ */
+export const Authentication = new Authentication$Type();
 /**
  * @generated ServiceType for protobuf service muni.FloorService
  */
 export const FloorService = new ServiceType("muni.FloorService", [
     { name: "ListFloors", options: {}, I: ListFloorsRequest, O: ListFloorsResponse },
-    { name: "JoinFloor", options: {}, I: JoinFloorRequest, O: JoinFloorResponse }
+    { name: "JoinFloor", serverStreaming: true, options: {}, I: JoinFloorRequest, O: JoinFloorResponse },
+    { name: "CreateFloor", options: {}, I: CreateFloorRequest, O: CreateFloorResponse }
 ]);

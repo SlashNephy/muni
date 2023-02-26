@@ -23,7 +23,8 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type FloorServiceClient interface {
 	ListFloors(ctx context.Context, in *ListFloorsRequest, opts ...grpc.CallOption) (*ListFloorsResponse, error)
-	JoinFloor(ctx context.Context, in *JoinFloorRequest, opts ...grpc.CallOption) (*JoinFloorResponse, error)
+	JoinFloor(ctx context.Context, in *JoinFloorRequest, opts ...grpc.CallOption) (FloorService_JoinFloorClient, error)
+	CreateFloor(ctx context.Context, in *CreateFloorRequest, opts ...grpc.CallOption) (*CreateFloorResponse, error)
 }
 
 type floorServiceClient struct {
@@ -43,9 +44,41 @@ func (c *floorServiceClient) ListFloors(ctx context.Context, in *ListFloorsReque
 	return out, nil
 }
 
-func (c *floorServiceClient) JoinFloor(ctx context.Context, in *JoinFloorRequest, opts ...grpc.CallOption) (*JoinFloorResponse, error) {
-	out := new(JoinFloorResponse)
-	err := c.cc.Invoke(ctx, "/muni.FloorService/JoinFloor", in, out, opts...)
+func (c *floorServiceClient) JoinFloor(ctx context.Context, in *JoinFloorRequest, opts ...grpc.CallOption) (FloorService_JoinFloorClient, error) {
+	stream, err := c.cc.NewStream(ctx, &FloorService_ServiceDesc.Streams[0], "/muni.FloorService/JoinFloor", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &floorServiceJoinFloorClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type FloorService_JoinFloorClient interface {
+	Recv() (*JoinFloorResponse, error)
+	grpc.ClientStream
+}
+
+type floorServiceJoinFloorClient struct {
+	grpc.ClientStream
+}
+
+func (x *floorServiceJoinFloorClient) Recv() (*JoinFloorResponse, error) {
+	m := new(JoinFloorResponse)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+func (c *floorServiceClient) CreateFloor(ctx context.Context, in *CreateFloorRequest, opts ...grpc.CallOption) (*CreateFloorResponse, error) {
+	out := new(CreateFloorResponse)
+	err := c.cc.Invoke(ctx, "/muni.FloorService/CreateFloor", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -57,7 +90,8 @@ func (c *floorServiceClient) JoinFloor(ctx context.Context, in *JoinFloorRequest
 // for forward compatibility
 type FloorServiceServer interface {
 	ListFloors(context.Context, *ListFloorsRequest) (*ListFloorsResponse, error)
-	JoinFloor(context.Context, *JoinFloorRequest) (*JoinFloorResponse, error)
+	JoinFloor(*JoinFloorRequest, FloorService_JoinFloorServer) error
+	CreateFloor(context.Context, *CreateFloorRequest) (*CreateFloorResponse, error)
 	mustEmbedUnimplementedFloorServiceServer()
 }
 
@@ -68,8 +102,11 @@ type UnimplementedFloorServiceServer struct {
 func (UnimplementedFloorServiceServer) ListFloors(context.Context, *ListFloorsRequest) (*ListFloorsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListFloors not implemented")
 }
-func (UnimplementedFloorServiceServer) JoinFloor(context.Context, *JoinFloorRequest) (*JoinFloorResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method JoinFloor not implemented")
+func (UnimplementedFloorServiceServer) JoinFloor(*JoinFloorRequest, FloorService_JoinFloorServer) error {
+	return status.Errorf(codes.Unimplemented, "method JoinFloor not implemented")
+}
+func (UnimplementedFloorServiceServer) CreateFloor(context.Context, *CreateFloorRequest) (*CreateFloorResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateFloor not implemented")
 }
 func (UnimplementedFloorServiceServer) mustEmbedUnimplementedFloorServiceServer() {}
 
@@ -102,20 +139,41 @@ func _FloorService_ListFloors_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FloorService_JoinFloor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(JoinFloorRequest)
+func _FloorService_JoinFloor_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(JoinFloorRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(FloorServiceServer).JoinFloor(m, &floorServiceJoinFloorServer{stream})
+}
+
+type FloorService_JoinFloorServer interface {
+	Send(*JoinFloorResponse) error
+	grpc.ServerStream
+}
+
+type floorServiceJoinFloorServer struct {
+	grpc.ServerStream
+}
+
+func (x *floorServiceJoinFloorServer) Send(m *JoinFloorResponse) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func _FloorService_CreateFloor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateFloorRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FloorServiceServer).JoinFloor(ctx, in)
+		return srv.(FloorServiceServer).CreateFloor(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/muni.FloorService/JoinFloor",
+		FullMethod: "/muni.FloorService/CreateFloor",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FloorServiceServer).JoinFloor(ctx, req.(*JoinFloorRequest))
+		return srv.(FloorServiceServer).CreateFloor(ctx, req.(*CreateFloorRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -132,10 +190,16 @@ var FloorService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _FloorService_ListFloors_Handler,
 		},
 		{
-			MethodName: "JoinFloor",
-			Handler:    _FloorService_JoinFloor_Handler,
+			MethodName: "CreateFloor",
+			Handler:    _FloorService_CreateFloor_Handler,
 		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "JoinFloor",
+			Handler:       _FloorService_JoinFloor_Handler,
+			ServerStreams: true,
+		},
+	},
 	Metadata: "Floor.proto",
 }

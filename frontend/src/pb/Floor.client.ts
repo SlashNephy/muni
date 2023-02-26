@@ -4,8 +4,11 @@
 import type { RpcTransport } from "@protobuf-ts/runtime-rpc";
 import type { ServiceInfo } from "@protobuf-ts/runtime-rpc";
 import { FloorService } from "./Floor";
+import type { CreateFloorResponse } from "./Floor";
+import type { CreateFloorRequest } from "./Floor";
 import type { JoinFloorResponse } from "./Floor";
 import type { JoinFloorRequest } from "./Floor";
+import type { ServerStreamingCall } from "@protobuf-ts/runtime-rpc";
 import { stackIntercept } from "@protobuf-ts/runtime-rpc";
 import type { ListFloorsResponse } from "./Floor";
 import type { ListFloorsRequest } from "./Floor";
@@ -20,9 +23,13 @@ export interface IFloorServiceClient {
      */
     listFloors(input: ListFloorsRequest, options?: RpcOptions): UnaryCall<ListFloorsRequest, ListFloorsResponse>;
     /**
-     * @generated from protobuf rpc: JoinFloor(muni.JoinFloorRequest) returns (muni.JoinFloorResponse);
+     * @generated from protobuf rpc: JoinFloor(muni.JoinFloorRequest) returns (stream muni.JoinFloorResponse);
      */
-    joinFloor(input: JoinFloorRequest, options?: RpcOptions): UnaryCall<JoinFloorRequest, JoinFloorResponse>;
+    joinFloor(input: JoinFloorRequest, options?: RpcOptions): ServerStreamingCall<JoinFloorRequest, JoinFloorResponse>;
+    /**
+     * @generated from protobuf rpc: CreateFloor(muni.CreateFloorRequest) returns (muni.CreateFloorResponse);
+     */
+    createFloor(input: CreateFloorRequest, options?: RpcOptions): UnaryCall<CreateFloorRequest, CreateFloorResponse>;
 }
 /**
  * @generated from protobuf service muni.FloorService
@@ -41,10 +48,17 @@ export class FloorServiceClient implements IFloorServiceClient, ServiceInfo {
         return stackIntercept<ListFloorsRequest, ListFloorsResponse>("unary", this._transport, method, opt, input);
     }
     /**
-     * @generated from protobuf rpc: JoinFloor(muni.JoinFloorRequest) returns (muni.JoinFloorResponse);
+     * @generated from protobuf rpc: JoinFloor(muni.JoinFloorRequest) returns (stream muni.JoinFloorResponse);
      */
-    joinFloor(input: JoinFloorRequest, options?: RpcOptions): UnaryCall<JoinFloorRequest, JoinFloorResponse> {
+    joinFloor(input: JoinFloorRequest, options?: RpcOptions): ServerStreamingCall<JoinFloorRequest, JoinFloorResponse> {
         const method = this.methods[1], opt = this._transport.mergeOptions(options);
-        return stackIntercept<JoinFloorRequest, JoinFloorResponse>("unary", this._transport, method, opt, input);
+        return stackIntercept<JoinFloorRequest, JoinFloorResponse>("serverStreaming", this._transport, method, opt, input);
+    }
+    /**
+     * @generated from protobuf rpc: CreateFloor(muni.CreateFloorRequest) returns (muni.CreateFloorResponse);
+     */
+    createFloor(input: CreateFloorRequest, options?: RpcOptions): UnaryCall<CreateFloorRequest, CreateFloorResponse> {
+        const method = this.methods[2], opt = this._transport.mergeOptions(options);
+        return stackIntercept<CreateFloorRequest, CreateFloorResponse>("unary", this._transport, method, opt, input);
     }
 }
