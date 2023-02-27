@@ -6,35 +6,35 @@ import packageJson from '../../package.json'
 import { BounceLinkButton } from '../components/BounceLinkButton'
 import { AppLayout } from '../components/layouts/AppLayout'
 
-export const Index: React.FC = () => {
+export function Index(): React.ReactElement {
   return (
     <AppLayout>
       <Title align="center">{packageJson.name}</Title>
 
       <Space />
 
-      <Group spacing="lg" position="center">
+      <Group position="center" spacing="lg">
         <BounceLinkButton
-          to="/floors"
-          size="md"
-          variant="gradient"
-          leftIcon={<IconConfetti size={24} />}
           gradient={{ from: 'teal', to: 'blue', deg: 60 }}
           label="観客として参加"
+          leftIcon={<IconConfetti size={24} />}
+          size="md"
+          to="/floors"
+          variant="gradient"
         />
 
         <BounceLinkButton
-          to="/floors/new"
-          size="md"
-          variant="gradient"
-          leftIcon={<IconBolt size={24} />}
           gradient={{ from: 'orange', to: 'pink', deg: 120 }}
           label="VJ としてホスト"
+          leftIcon={<IconBolt size={24} />}
+          size="md"
+          to="/floors/new"
+          variant="gradient"
         />
       </Group>
 
       <Center>
-        <Text size="sm" color="dimmed" mt="lg">
+        <Text color="dimmed" mt="lg" size="sm">
           {packageJson.name}{' '}
           は現在開発中です。予期しない問題により正しく機能しないことがあります。
           <br />

@@ -5,31 +5,32 @@ import { GradientBackground } from '../GradientBackground'
 
 import type { ModalProps } from '@mantine/core'
 
-export const AppLayout: React.FC<
-  React.PropsWithChildren<
-    Omit<
-      ModalProps,
-      | 'opened'
-      | 'onClose'
-      | 'withCloseButton'
-      | 'closeOnEscape'
-      | 'closeOnClickOutside'
-    >
+export function AppLayout({
+  children,
+  ...props
+}: React.PropsWithChildren<
+  Omit<
+    ModalProps,
+    | 'opened'
+    | 'onClose'
+    | 'withCloseButton'
+    | 'closeOnEscape'
+    | 'closeOnClickOutside'
   >
-> = ({ children, ...props }) => {
+>): React.ReactElement {
   return (
     <AppShell>
       <GradientBackground />
 
       <Modal
-        opened
-        onClose={() => false}
-        withCloseButton={false}
-        closeOnEscape={false}
-        closeOnClickOutside={false}
         centered
-        size="lg"
+        opened
+        closeOnClickOutside={false}
+        closeOnEscape={false}
         radius="lg"
+        size="lg"
+        withCloseButton={false}
+        onClose={() => false}
         {...props}
       >
         <Stack>{children}</Stack>

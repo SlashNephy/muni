@@ -1,12 +1,17 @@
 import { css } from '@emotion/react'
 import React, { useCallback, useEffect, useState } from 'react'
 
-export const ResizeBar: React.FC<{
+export function ResizeBar({
+  initialX,
+  minWidth,
+  maxWidth,
+  onResize,
+}: {
   initialX: number
   minWidth: number
   maxWidth: number
   onResize(width: number): void
-}> = ({ initialX, minWidth, maxWidth, onResize }) => {
+}): React.ReactElement {
   const [isTracking, setIsTracking] = useState(false)
   const [startCursorScreenX, setStartCursorScreenX] = useState<number>()
 
@@ -41,25 +46,19 @@ export const ResizeBar: React.FC<{
   }, [handleMouseMove, handleMouseUp])
 
   return (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
-      onMouseDown={(e) => {
-        e.preventDefault()
-        e.stopPropagation()
-
-        setIsTracking(true)
-        setStartCursorScreenX(e.screenX)
-      }}
       css={css`
-        flex: none;
         position: absolute;
+        right: 0;
         box-sizing: border-box;
+        flex: none;
         width: 5px;
         height: 100%;
-        right: 0;
         cursor: col-resize;
+        user-select: none;
         border-left: 0px solid #ccc;
         -webkit-touch-callout: none;
-        user-select: none;
 
         &:hover,
         &:active {
@@ -67,6 +66,13 @@ export const ResizeBar: React.FC<{
           border-style: double;
         }
       `}
+      onMouseDown={(e) => {
+        e.preventDefault()
+        e.stopPropagation()
+
+        setIsTracking(true)
+        setStartCursorScreenX(e.screenX)
+      }}
     />
   )
 }

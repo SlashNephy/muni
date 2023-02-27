@@ -1,11 +1,11 @@
-import { Center, Code, Modal, Space, Stack, Title, Text } from '@mantine/core'
+import { Center, Code, Modal, Space, Stack, Text, Title } from '@mantine/core'
 import { IconFileAlert } from '@tabler/icons-react'
 import React from 'react'
 import { useRouteError } from 'react-router-dom'
 
 import { GradientBackground } from '../components/GradientBackground'
 
-export const ErrorReport: React.FC = () => {
+export function ErrorReport(): React.ReactElement {
   const error = useRouteError()
 
   return (
@@ -15,12 +15,12 @@ export const ErrorReport: React.FC = () => {
       <Modal
         centered
         opened
-        onClose={() => false}
-        withCloseButton={false}
-        closeOnEscape={false}
         closeOnClickOutside={false}
-        size="xl"
+        closeOnEscape={false}
         radius="lg"
+        size="xl"
+        withCloseButton={false}
+        onClose={() => false}
       >
         <Stack>
           <Title align="center">
@@ -35,7 +35,7 @@ export const ErrorReport: React.FC = () => {
               <Text>
                 バグレポートを行う場合は、開発者に以下の情報を送信してください。
               </Text>
-              <Code color="red" block>
+              <Code block color="red">
                 {error?.toString()}
                 {error !== null &&
                   error !== undefined &&

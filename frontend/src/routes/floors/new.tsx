@@ -1,5 +1,7 @@
 import React from 'react'
 
-export const FloorsNew: React.FC = () => {
-  return <></>
+import { AppLayout } from '../../components/layouts/AppLayout'
+
+export function FloorsNew(): React.ReactElement {
+  return <AppLayout />
 }

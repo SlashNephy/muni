@@ -5,13 +5,15 @@ import { Link } from 'react-router-dom'
 
 import type { ButtonProps } from '@mantine/core'
 
-export const BounceLinkButton: React.FC<
-  ButtonProps &
-    React.ComponentPropsWithoutRef<'button'> & {
-      to: string
-      label: string
-    }
-> = ({ to, label, ...props }) => {
+export function BounceLinkButton({
+  to,
+  label,
+  ...props
+}: ButtonProps &
+  React.ComponentPropsWithoutRef<'button'> & {
+    to: string
+    label: string
+  }): React.ReactElement {
   return (
     <div
       css={css`

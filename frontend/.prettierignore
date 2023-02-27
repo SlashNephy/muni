@@ -1,3 +1,4 @@
 .yarn
 rollup.config-*.mjs
 pb
+dist
