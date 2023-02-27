@@ -852,12 +852,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@slashnephy/prettier-config@npm:0.1.14":
-  version: 0.1.14
-  resolution: "@slashnephy/prettier-config@npm:0.1.14"
+"@slashnephy/prettier-config@npm:0.1.16":
+  version: 0.1.16
+  resolution: "@slashnephy/prettier-config@npm:0.1.16"
   peerDependencies:
     prettier: ^2
-  checksum: 57a671591353299b9df54898ff250519d4ecd1ff25525f6ea77a68dc0deb747555eeaab176e7d969200c061ab2dad05be6176b50daca665e3beab98007269e80
+  checksum: 077b5456f5a419609a70d4628f465482f22f22618a17b66784ff0a3646e2ee6309b416efdcacc178b2c82e62cad67a2d5775e1891537acdd047da8d9af31994a
   languageName: node
   linkType: hard
 
@@ -1010,10 +1010,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.14.1":
-  version: 18.14.1
-  resolution: "@types/node@npm:18.14.1"
-  checksum: 58556bbdb0050e44a4934742c1da2530812782c06d266a758e669e44c5aa196166c5fce45fdb03f016876717e3840478b3220129bb77367f979607564047f0a3
+"@types/node@npm:18.14.2":
+  version: 18.14.2
+  resolution: "@types/node@npm:18.14.2"
+  checksum: 53c07e721f6ae33de71306f6a0b75dae6066a4f55bd5484c93bd59ff25f0c5f004ceafeef509a4d0cb9e24a247efc34d50489bcc1b05a53ecc68e2fc088e65cb
   languageName: node
   linkType: hard
 
@@ -4085,9 +4085,9 @@ __metadata:
     "@protobuf-ts/grpcweb-transport": 2.8.2
     "@protobuf-ts/runtime": 2.8.2
     "@slashnephy/eslint-config": 0.3.4
-    "@slashnephy/prettier-config": 0.1.14
+    "@slashnephy/prettier-config": 0.1.16
     "@tabler/icons-react": 2.4.0
-    "@types/node": 18.14.1
+    "@types/node": 18.14.2
     "@types/react": 18.0.28
     "@types/react-dom": 18.0.11
     "@u-wave/react-vimeo": 0.9.10
