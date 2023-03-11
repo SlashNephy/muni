@@ -48,7 +48,9 @@ func NewServer(cfg *config.Config, logger *zap.Logger) *Server {
 		)),
 	)
 
-	pb.RegisterFloorServiceServer(server, controller.NewController(cfg))
+	ctl := controller.NewController(cfg)
+	pb.RegisterFloorServiceServer(server, ctl)
+	pb.RegisterVimeoServiceServer(server, ctl)
 
 	return &Server{
 		s: server,

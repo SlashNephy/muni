@@ -1,55 +1,37 @@
-import { AppShell, Button, Navbar, Text, TextInput } from '@mantine/core'
-import { IconBrandYoutube, IconSearch } from '@tabler/icons-react'
-import React, { useState } from 'react'
+import { Loader, Stack, Text } from '@mantine/core'
+import React from 'react'
+import { useQuery } from 'react-query'
 import { useParams } from 'react-router-dom'
 
-import { ResizeBar } from '../../components/ResizeBar'
-
-function ControlPanel(): React.ReactElement {
-  const [width, setWidth] = useState(400)
-  const [youTubeVideoId, setYouTubeVideoId] = useState<string>()
-
-  return (
-    <Navbar width={{ base: width }}>
-      <Text>Navbar</Text>
-      <TextInput
-        icon={<IconBrandYoutube />}
-        value={youTubeVideoId}
-        rightSection={
-          <Button>
-            <IconSearch />
-          </Button>
-        }
-        onChange={(e) => {
-          setYouTubeVideoId(e.currentTarget.value)
-        }}
-      />
-
-      <ResizeBar
-        initialX={width}
-        maxWidth={900}
-        minWidth={300}
-        onResize={(newWidth) => {
-          setWidth(newWidth)
-        }}
-      />
-    </Navbar>
-  )
-}
+import { CardWithImage } from '../../components/CardWithImage'
+import { AppLayout } from '../../components/layouts/AppLayout'
+import { useVimeoServiceClient } from '../../lib/useServiceClient'
 
 export function FloorsBooth(): React.ReactElement {
   const { floorId } = useParams<'floorId'>()
+  const client = useVimeoServiceClient()
+  const { data, isLoading } = useQuery(['vimeo-videos'], async () =>
+    client.listVideoVideos({})
+  )
 
   return (
-    <AppShell
-      navbar={<ControlPanel />}
-      styles={{
-        main: {
-          padding: 0,
-        },
-      }}
-    >
-      {floorId}
-    </AppShell>
+    <AppLayout>
+      {isLoading ? (
+        <Stack>
+          <Text>読み込み中です...</Text>
+          <Loader />
+        </Stack>
+      ) : (
+        data?.response.videos.map((v) => (
+          <CardWithImage
+            key={v.key}
+            author={v.authorName}
+            image={v.previewUrl}
+            link={v.url}
+            title={v.title}
+          />
+        ))
+      )}
+    </AppLayout>
   )
 }

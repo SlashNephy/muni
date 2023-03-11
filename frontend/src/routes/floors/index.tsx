@@ -6,7 +6,7 @@ import { useQuery } from 'react-query'
 import { Link } from 'react-router-dom'
 
 import { AppLayout } from '../../components/layouts/AppLayout'
-import { useFloorServiceClient } from '../../lib/useFloorServiceClient'
+import { useFloorServiceClient } from '../../lib/useServiceClient'
 import { Authentication_Mode } from '../../pb/Floor'
 
 import type { Floor } from '../../pb/Floor'

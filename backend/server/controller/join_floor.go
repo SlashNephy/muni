@@ -8,7 +8,11 @@ import (
 func (c *Controller) JoinFloor(req *pb.JoinFloorRequest, s pb.FloorService_JoinFloorServer) error {
 	for {
 		res := &pb.JoinFloorResponse{
-			FloorId: req.FloorId,
+			Video: &pb.Video{
+				Source: &pb.Video_VimeoId{
+					VimeoId: 252893118,
+				},
+			},
 		}
 		if err := s.Send(res); err != nil {
 			return err

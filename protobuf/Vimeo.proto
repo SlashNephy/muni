@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package muni;
+option go_package = "github.com/SlashNephy/muni/backend/pb";
+
+service VimeoService {
+  rpc ListVideoVideos(ListVideoVideosRequest) returns (ListVideoVideosResponse) {}
+}
+
+message ListVideoVideosRequest {
+}
+
+message ListVideoVideosResponse {
+  repeated VimeoVideo videos = 1;
+}
+
+message VimeoVideo {
+  string key = 1;
+  string title = 2;
+  string url = 3;
+  string preview_url = 4;
+  string author_name = 5;
+}

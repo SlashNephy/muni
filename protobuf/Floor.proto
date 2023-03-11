@@ -21,7 +21,7 @@ message JoinFloorRequest {
 }
 
 message JoinFloorResponse {
-  string floor_id = 1;
+  Video video = 1;
 }
 
 message CreateFloorRequest {
@@ -39,6 +39,20 @@ message Floor {
   string name = 2;
   Host host = 3;
   Authentication.Mode authentication = 4;
+}
+
+message Video {
+  oneof source {
+    string html5_url = 1;
+    string youtube_id = 2;
+    uint32 vimeo_id = 3;
+  }
+}
+
+enum VideoType {
+  Html5 = 0;
+  YouTube = 1;
+  Vimeo = 2;
 }
 
 message Host {

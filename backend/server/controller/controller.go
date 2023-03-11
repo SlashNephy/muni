@@ -8,6 +8,7 @@ import (
 type Controller struct {
 	config *config.Config
 	pb.UnimplementedFloorServiceServer
+	pb.UnimplementedVimeoServiceServer
 }
 
 func NewController(cfg *config.Config) *Controller {

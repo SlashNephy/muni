@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 
 import { PlayerLayout } from '../../components/layouts/PlayerLayout'
 import { VimeoPlayer } from '../../components/players/VimeoPlayer'
-import { useFloorServiceClient } from '../../lib/useFloorServiceClient'
+import { useFloorServiceClient } from '../../lib/useServiceClient'
 
 export function Floor(): React.ReactElement {
   const { floorId } = useParams<'floorId'>()

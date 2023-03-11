@@ -9,7 +9,9 @@ import (
 )
 
 type Config struct {
-	Port uint16 `env:"PORT" envDefault:"7080"`
+	Port              uint16 `env:"PORT" envDefault:"7080"`
+	VimeoClientID     string `env:"VIMEO_CLIENT_ID,required"`
+	VimeoClientSecret string `env:"VIMEO_CLIENT_SECRET,required"`
 }
 
 func Load() (*Config, error) {

@@ -40,9 +40,9 @@ export interface JoinFloorRequest {
  */
 export interface JoinFloorResponse {
     /**
-     * @generated from protobuf field: string floor_id = 1;
+     * @generated from protobuf field: muni.Video video = 1;
      */
-    floorId: string;
+    video?: Video;
 }
 /**
  * @generated from protobuf message muni.CreateFloorRequest
@@ -92,6 +92,35 @@ export interface Floor {
     authentication: Authentication_Mode;
 }
 /**
+ * @generated from protobuf message muni.Video
+ */
+export interface Video {
+    /**
+     * @generated from protobuf oneof: source
+     */
+    source: {
+        oneofKind: "html5Url";
+        /**
+         * @generated from protobuf field: string html5_url = 1;
+         */
+        html5Url: string;
+    } | {
+        oneofKind: "youtubeId";
+        /**
+         * @generated from protobuf field: string youtube_id = 2;
+         */
+        youtubeId: string;
+    } | {
+        oneofKind: "vimeoId";
+        /**
+         * @generated from protobuf field: uint32 vimeo_id = 3;
+         */
+        vimeoId: number;
+    } | {
+        oneofKind: undefined;
+    };
+}
+/**
  * @generated from protobuf message muni.Host
  */
 export interface Host {
@@ -125,6 +154,23 @@ export enum Authentication_Mode {
      * @generated from protobuf enum value: Password = 1;
      */
     Password = 1
+}
+/**
+ * @generated from protobuf enum muni.VideoType
+ */
+export enum VideoType {
+    /**
+     * @generated from protobuf enum value: Html5 = 0;
+     */
+    Html5 = 0,
+    /**
+     * @generated from protobuf enum value: YouTube = 1;
+     */
+    YouTube = 1,
+    /**
+     * @generated from protobuf enum value: Vimeo = 2;
+     */
+    Vimeo = 2
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class ListFloorsRequest$Type extends MessageType<ListFloorsRequest> {
@@ -250,11 +296,11 @@ export const JoinFloorRequest = new JoinFloorRequest$Type();
 class JoinFloorResponse$Type extends MessageType<JoinFloorResponse> {
     constructor() {
         super("muni.JoinFloorResponse", [
-            { no: 1, name: "floor_id", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 1, name: "video", kind: "message", T: () => Video }
         ]);
     }
     create(value?: PartialMessage<JoinFloorResponse>): JoinFloorResponse {
-        const message = { floorId: "" };
+        const message = {};
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<JoinFloorResponse>(this, message, value);
@@ -265,8 +311,8 @@ class JoinFloorResponse$Type extends MessageType<JoinFloorResponse> {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* string floor_id */ 1:
-                    message.floorId = reader.string();
+                case /* muni.Video video */ 1:
+                    message.video = Video.internalBinaryRead(reader, reader.uint32(), options, message.video);
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -280,9 +326,9 @@ class JoinFloorResponse$Type extends MessageType<JoinFloorResponse> {
         return message;
     }
     internalBinaryWrite(message: JoinFloorResponse, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* string floor_id = 1; */
-        if (message.floorId !== "")
-            writer.tag(1, WireType.LengthDelimited).string(message.floorId);
+        /* muni.Video video = 1; */
+        if (message.video)
+            Video.internalBinaryWrite(message.video, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -469,6 +515,76 @@ class Floor$Type extends MessageType<Floor> {
  * @generated MessageType for protobuf message muni.Floor
  */
 export const Floor = new Floor$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class Video$Type extends MessageType<Video> {
+    constructor() {
+        super("muni.Video", [
+            { no: 1, name: "html5_url", kind: "scalar", oneof: "source", T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "youtube_id", kind: "scalar", oneof: "source", T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "vimeo_id", kind: "scalar", oneof: "source", T: 13 /*ScalarType.UINT32*/ }
+        ]);
+    }
+    create(value?: PartialMessage<Video>): Video {
+        const message = { source: { oneofKind: undefined } };
+        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
+        if (value !== undefined)
+            reflectionMergePartial<Video>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: Video): Video {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string html5_url */ 1:
+                    message.source = {
+                        oneofKind: "html5Url",
+                        html5Url: reader.string()
+                    };
+                    break;
+                case /* string youtube_id */ 2:
+                    message.source = {
+                        oneofKind: "youtubeId",
+                        youtubeId: reader.string()
+                    };
+                    break;
+                case /* uint32 vimeo_id */ 3:
+                    message.source = {
+                        oneofKind: "vimeoId",
+                        vimeoId: reader.uint32()
+                    };
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: Video, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string html5_url = 1; */
+        if (message.source.oneofKind === "html5Url")
+            writer.tag(1, WireType.LengthDelimited).string(message.source.html5Url);
+        /* string youtube_id = 2; */
+        if (message.source.oneofKind === "youtubeId")
+            writer.tag(2, WireType.LengthDelimited).string(message.source.youtubeId);
+        /* uint32 vimeo_id = 3; */
+        if (message.source.oneofKind === "vimeoId")
+            writer.tag(3, WireType.Varint).uint32(message.source.vimeoId);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message muni.Video
+ */
+export const Video = new Video$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class Host$Type extends MessageType<Host> {
     constructor() {
