@@ -2,12 +2,12 @@ package server
 
 import (
 	"fmt"
+	"github.com/SlashNephy/muni/backend/logger"
 	"net"
 
 	grpcMiddleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	zapMiddleware "github.com/grpc-ecosystem/go-grpc-middleware/logging/zap"
 	tagsMiddleware "github.com/grpc-ecosystem/go-grpc-middleware/tags"
-	"go.uber.org/zap"
 	"google.golang.org/grpc"
 
 	"github.com/SlashNephy/muni/backend/config"
@@ -36,14 +36,19 @@ func (s *Server) Shutdown() {
 	s.s.GracefulStop()
 }
 
-func NewServer(cfg *config.Config, logger *zap.Logger) *Server {
+func NewServer(cfg *config.Config) (*Server, error) {
+	log, err := logger.NewLogger()
+	if err != nil {
+		return nil, err
+	}
+
 	server := grpc.NewServer(
 		grpc.UnaryInterceptor(grpcMiddleware.ChainUnaryServer(
-			zapMiddleware.UnaryServerInterceptor(logger),
+			zapMiddleware.UnaryServerInterceptor(log),
 			tagsMiddleware.UnaryServerInterceptor(),
 		)),
 		grpc.StreamInterceptor(grpcMiddleware.ChainStreamServer(
-			zapMiddleware.StreamServerInterceptor(logger),
+			zapMiddleware.StreamServerInterceptor(log),
 			tagsMiddleware.StreamServerInterceptor(),
 		)),
 	)
@@ -54,5 +59,5 @@ func NewServer(cfg *config.Config, logger *zap.Logger) *Server {
 
 	return &Server{
 		s: server,
-	}
+	}, nil
 }

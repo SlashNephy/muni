@@ -1,4 +1,4 @@
-package main
+package logger
 
 import (
 	"time"
@@ -6,16 +6,6 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
-
-var logger *zap.Logger
-
-func init() {
-	var err error
-	logger, err = NewLogger()
-	if err != nil {
-		panic(err)
-	}
-}
 
 func NewLogger() (*zap.Logger, error) {
 	config := zap.NewProductionConfig()

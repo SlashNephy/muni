@@ -7,21 +7,31 @@ import (
 	"go.uber.org/zap"
 
 	"github.com/SlashNephy/muni/backend/config"
+	"github.com/SlashNephy/muni/backend/logger"
 	"github.com/SlashNephy/muni/backend/server"
 )
 
 func main() {
-	cfg, err := config.Load()
+	log, err := logger.NewLogger()
 	if err != nil {
-		logger.Fatal("failed to load config", zap.Error(err))
+		panic(err)
 	}
 
-	s := server.NewServer(cfg, logger)
+	cfg, err := config.Load()
+	if err != nil {
+		log.Fatal("failed to load config", zap.Error(err))
+	}
+
+	s, err := server.NewServer(cfg)
+	if err != nil {
+		log.Fatal("failed to create server", zap.Error(err))
+	}
+
 	go func() {
-		logger.Info("server is now listening", zap.Uint16("port", cfg.Port))
+		log.Info("server is now listening", zap.Uint16("port", cfg.Port))
 
 		if err = s.Start(cfg.Port); err != nil {
-			logger.Error("failed to start server", zap.Error(err))
+			log.Error("failed to start server", zap.Error(err))
 		}
 	}()
 
