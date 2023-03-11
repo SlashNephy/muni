@@ -382,7 +382,7 @@ type ChannelVideosResponse struct {
 	} `json:"data"`
 }
 
-func (c *Client) GetChannelVideos(ctx context.Context, channelID string, page int) (*ChannelVideosResponse, error) {
+func (c *Client) GetChannelVideos(ctx context.Context, channelID string, page int32) (*ChannelVideosResponse, error) {
 	request, err := http.NewRequestWithContext(ctx, http.MethodGet, fmt.Sprintf("https://api.vimeo.com/channels/%s/videos?page=%d", channelID, page), nil)
 	if err != nil {
 		return nil, err

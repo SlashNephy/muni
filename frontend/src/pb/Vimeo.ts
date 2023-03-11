@@ -2,12 +2,12 @@
 // @generated from protobuf file "Vimeo.proto" (package "muni", syntax proto3)
 // tslint:disable
 import { ServiceType } from "@protobuf-ts/runtime-rpc";
-import { WireType } from "@protobuf-ts/runtime";
 import type { BinaryWriteOptions } from "@protobuf-ts/runtime";
 import type { IBinaryWriter } from "@protobuf-ts/runtime";
-import { UnknownFieldHandler } from "@protobuf-ts/runtime";
+import { WireType } from "@protobuf-ts/runtime";
 import type { BinaryReadOptions } from "@protobuf-ts/runtime";
 import type { IBinaryReader } from "@protobuf-ts/runtime";
+import { UnknownFieldHandler } from "@protobuf-ts/runtime";
 import type { PartialMessage } from "@protobuf-ts/runtime";
 import { reflectionMergePartial } from "@protobuf-ts/runtime";
 import { MESSAGE_TYPE } from "@protobuf-ts/runtime";
@@ -16,6 +16,10 @@ import { MessageType } from "@protobuf-ts/runtime";
  * @generated from protobuf message muni.ListVideoVideosRequest
  */
 export interface ListVideoVideosRequest {
+    /**
+     * @generated from protobuf field: int32 page = 1;
+     */
+    page: number;
 }
 /**
  * @generated from protobuf message muni.ListVideoVideosResponse
@@ -54,19 +58,40 @@ export interface VimeoVideo {
 // @generated message type with reflection information, may provide speed optimized methods
 class ListVideoVideosRequest$Type extends MessageType<ListVideoVideosRequest> {
     constructor() {
-        super("muni.ListVideoVideosRequest", []);
+        super("muni.ListVideoVideosRequest", [
+            { no: 1, name: "page", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
+        ]);
     }
     create(value?: PartialMessage<ListVideoVideosRequest>): ListVideoVideosRequest {
-        const message = {};
+        const message = { page: 0 };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<ListVideoVideosRequest>(this, message, value);
         return message;
     }
     internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: ListVideoVideosRequest): ListVideoVideosRequest {
-        return target ?? this.create();
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* int32 page */ 1:
+                    message.page = reader.int32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
     }
     internalBinaryWrite(message: ListVideoVideosRequest, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* int32 page = 1; */
+        if (message.page !== 0)
+            writer.tag(1, WireType.Varint).int32(message.page);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

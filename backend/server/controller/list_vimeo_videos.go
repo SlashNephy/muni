@@ -7,13 +7,13 @@ import (
 	"github.com/SlashNephy/muni/backend/pb"
 )
 
-func (c *Controller) ListVideoVideos(ctx context.Context, _ *pb.ListVideoVideosRequest) (*pb.ListVideoVideosResponse, error) {
+func (c *Controller) ListVideoVideos(ctx context.Context, request *pb.ListVideoVideosRequest) (*pb.ListVideoVideosResponse, error) {
 	client, err := vimeo.NewClient(c.config.VimeoClientID, c.config.VimeoClientSecret)
 	if err != nil {
 		return nil, err
 	}
 
-	response, err := client.GetChannelVideos(ctx, "beeple", 1)
+	response, err := client.GetChannelVideos(ctx, "beeple", request.Page)
 	if err != nil {
 		return nil, err
 	}

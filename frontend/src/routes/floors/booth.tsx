@@ -11,7 +11,9 @@ export function FloorsBooth(): React.ReactElement {
   const { floorId } = useParams<'floorId'>()
   const client = useVimeoServiceClient()
   const { data, isLoading } = useQuery(['vimeo-videos'], async () =>
-    client.listVideoVideos({})
+    client.listVideoVideos({
+      page: 1,
+    })
   )
 
   return (
