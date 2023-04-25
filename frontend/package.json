@@ -27,7 +27,7 @@
     "@mantine/spotlight": "5.10.5",
     "@protobuf-ts/grpcweb-transport": "2.8.3",
     "@protobuf-ts/runtime": "2.8.3",
-    "@tabler/icons-react": "2.5.0",
+    "@tabler/icons-react": "2.16.0",
     "@u-wave/react-vimeo": "0.9.10",
     "@u-wave/react-youtube": "0.7.4",
     "konva": "8.4.3",
