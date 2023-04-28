@@ -42,7 +42,7 @@
     "zod": "3.21.4"
   },
   "devDependencies": {
-    "@emotion/babel-plugin": "11.10.6",
+    "@emotion/babel-plugin": "11.10.8",
     "@slashnephy/eslint-config": "0.4.19",
     "@slashnephy/prettier-config": "0.1.16",
     "@types/node": "18.16.2",
