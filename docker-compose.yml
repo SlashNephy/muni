@@ -18,7 +18,7 @@ services:
       - '7090:7090/tcp'
       - '7091:7091/tcp'
     volumes:
-      - ./backend/envoy.yaml:/etc/envoy/envoy.yaml:ro
+      - ./envoy/envoy.yaml:/etc/envoy/envoy.yaml:ro
 
   frontend:
     build:
