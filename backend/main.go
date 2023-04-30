@@ -35,7 +35,7 @@ func main() {
 		}
 	}()
 
-	handle := make(chan os.Signal)
+	handle := make(chan os.Signal, 1)
 	signal.Notify(handle, os.Interrupt)
 	<-handle
 
