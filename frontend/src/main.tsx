@@ -1,10 +1,12 @@
 import { MantineProvider } from '@mantine/core'
 import React from 'react'
 import { createRoot } from 'react-dom/client'
+import { I18nextProvider } from 'react-i18next'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { RecoilRoot } from 'recoil'
 
+import { i18n } from './locales/i18n'
 import { Index } from './routes'
 import { ErrorReport } from './routes/error'
 import { FloorsIndex } from './routes/floors'
@@ -49,7 +51,9 @@ if (root !== null) {
       <MantineProvider withGlobalStyles withNormalizeCSS>
         <QueryClientProvider client={queryClient}>
           <RecoilRoot>
-            <RouterProvider router={router} />
+            <I18nextProvider i18n={i18n}>
+              <RouterProvider router={router} />
+            </I18nextProvider>
           </RecoilRoot>
         </QueryClientProvider>
       </MantineProvider>
