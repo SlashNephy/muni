@@ -1,5 +1,5 @@
 {
-  "name": "muni",
+  "name": "muni-frontend",
   "version": "0.0.0",
   "type": "module",
   "repository": {
@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "tsc && vite build",
+    "build:storybook": "storybook build",
     "dev": "vite",
     "format": "concurrently -n format: -m 1 'yarn:format:*'",
     "format:eslint": "yarn lint:eslint --fix",
@@ -15,7 +16,8 @@
     "lint": "concurrently -n lint: 'yarn:lint:*'",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier --check .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
     "@emotion/react": "11.10.8",
@@ -47,7 +49,15 @@
     "@emotion/babel-plugin": "11.11.0",
     "@slashnephy/eslint-config": "0.4.25",
     "@slashnephy/prettier-config": "0.1.18",
+    "@storybook/addon-essentials": "7.0.11",
+    "@storybook/addon-interactions": "7.0.11",
+    "@storybook/addon-links": "7.0.11",
+    "@storybook/blocks": "7.0.11",
+    "@storybook/react": "7.0.11",
+    "@storybook/react-vite": "7.0.11",
+    "@storybook/testing-library": "0.0.14-next.2",
     "@types/node": "18.16.7",
+    "@types/prop-types": "15",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
     "@typescript-eslint/eslint-plugin": "5.59.5",
@@ -60,6 +70,8 @@
     "eslint-plugin-jest": "27.2.1",
     "eslint-plugin-unused-imports": "2.0.0",
     "prettier": "2.8.8",
+    "prop-types": "15.8.1",
+    "storybook": "7.0.11",
     "typescript": "5.0.4",
     "vite": "4.3.5"
   },
