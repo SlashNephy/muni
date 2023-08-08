@@ -1,8 +1,8 @@
 import { css } from '@emotion/react'
 import { Card, Grid, Group, Text, Title } from '@mantine/core'
 import { IconLock } from '@tabler/icons-react'
+import { useQuery } from '@tanstack/react-query'
 import React from 'react'
-import { useQuery } from 'react-query'
 import { Link } from 'react-router-dom'
 
 import { AppLayout } from '../../components/layouts/AppLayout'

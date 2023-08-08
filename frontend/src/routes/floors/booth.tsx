@@ -1,6 +1,6 @@
 import { Loader, Stack, Text } from '@mantine/core'
+import { useQuery } from '@tanstack/react-query'
 import React from 'react'
-import { useQuery } from 'react-query'
 import { useParams } from 'react-router-dom'
 
 import { CardWithImage } from '../../components/CardWithImage'

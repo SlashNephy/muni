@@ -31,6 +31,7 @@
     "@protobuf-ts/grpcweb-transport": "2.8.3",
     "@protobuf-ts/runtime": "2.9.0",
     "@tabler/icons-react": "2.17.0",
+    "@tanstack/react-query": "4.0.5",
     "@u-wave/react-vimeo": "0.9.10",
     "@u-wave/react-youtube": "0.7.4",
     "framer-motion": "10.12.10",
@@ -41,7 +42,6 @@
     "react-dom": "18.2.0",
     "react-i18next": "12.2.2",
     "react-konva": "18.2.7",
-    "@tanstack/react-query": "4.0.5",
     "react-rnd": "10.4.1",
     "react-router-dom": "6.11.1",
     "react-screen-wake-lock": "3.0.1",
@@ -63,25 +63,22 @@
     "@types/prop-types": "15",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
-    "@typescript-eslint/eslint-plugin": "5.59.5",
-    "@typescript-eslint/parser": "5.59.5",
     "@vitejs/plugin-react-swc": "3.3.1",
     "concurrently": "8.0.1",
     "eslint": "8.40.0",
-    "eslint-plugin-deprecation": "1.4.1",
-    "eslint-plugin-import": "2.27.5",
-    "eslint-plugin-jest": "27.2.1",
-    "eslint-plugin-unused-imports": "2.0.0",
     "prettier": "2.8.8",
     "prop-types": "15.8.1",
     "storybook": "7.0.11",
     "typescript": "5.0.4",
     "vite": "4.3.9"
   },
-  "packageManager": "yarn@3.5.1",
+  "packageManager": "yarn@3.6.1",
   "eslintConfig": {
     "extends": [
       "@slashnephy/eslint-config"
-    ]
+    ],
+    "rules": {
+      "import/extensions": "off"
+    }
   }
 }
