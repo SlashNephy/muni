@@ -3853,9 +3853,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-query@npm:4.0.5":
-  version: 4.0.5
-  resolution: "@tanstack/react-query@npm:4.0.5"
+"@tanstack/react-query@npm:4.0.10":
+  version: 4.0.10
+  resolution: "@tanstack/react-query@npm:4.0.10"
   dependencies:
     "@tanstack/query-core": ^4.0.0-beta.1
     "@types/use-sync-external-store": ^0.0.3
@@ -3869,7 +3869,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: c555d2dce19a57ba254855f19a06e4968ae21a08d5cd8890635d9771f77d5aef2e889b23a300b25d1e09b52edeb3fdf7b4579679c43cf9449692463a45a689b8
+  checksum: b5f7501f977f4262fe80e510f5d58f3b49163ff7232603a839b7184431db7309c38ab55c5856a9d31a3c5219dd5031f9174e9dfcc78408300d0424b3000b9034
   languageName: node
   linkType: hard
 
@@ -9839,7 +9839,7 @@ __metadata:
     "@storybook/react-vite": 7.0.11
     "@storybook/testing-library": 0.1.0
     "@tabler/icons-react": 2.17.0
-    "@tanstack/react-query": 4.0.5
+    "@tanstack/react-query": 4.0.10
     "@types/node": 18.16.7
     "@types/prop-types": 15
     "@types/react": 18.2.6
