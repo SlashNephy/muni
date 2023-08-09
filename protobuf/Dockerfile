@@ -1,4 +1,4 @@
-FROM namely/protoc-all:1.51_1@sha256:f788e25db4b93829d5f13e8bf1c07c452aa431fe4dc39c1444817a594bfa5b03 AS development
+FROM namely/protoc-all:1.51_2@sha256:33e47b2aece23a282a9f8d03a193c063cdd4b1f60d427b148b3c449b51a3ba3c AS development
 WORKDIR /app
 
 RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
