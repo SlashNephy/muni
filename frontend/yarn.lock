@@ -8987,14 +8987,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"its-fine@npm:^1.0.6":
-  version: 1.0.9
-  resolution: "its-fine@npm:1.0.9"
+"its-fine@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "its-fine@npm:1.1.1"
   dependencies:
     "@types/react-reconciler": ^0.28.0
   peerDependencies:
     react: ">=18.0"
-  checksum: 8fbd0db1fd0fbce132af2cceb7e8867ba16418ccc1e3d819ae01e34ab8b30e22fe72897f725b01ace75a44234a0798285d63f0f0e42c88c59785166ce812f480
+  checksum: abf9e98d406192291dc786a8ab90f0debf741d619d9878c40b7ccd5fbd98875ddfcadff780f2967200156347b5682fcf03df7a054c6dcea4be68b1ab7586b790
   languageName: node
   linkType: hard
 
@@ -9858,7 +9858,7 @@ __metadata:
     react: 18.2.0
     react-dom: 18.2.0
     react-i18next: 12.2.2
-    react-konva: 18.2.7
+    react-konva: 18.2.10
     react-rnd: 10.4.1
     react-router-dom: 6.11.1
     react-screen-wake-lock: 3.0.1
@@ -10867,19 +10867,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-konva@npm:18.2.7":
-  version: 18.2.7
-  resolution: "react-konva@npm:18.2.7"
+"react-konva@npm:18.2.10":
+  version: 18.2.10
+  resolution: "react-konva@npm:18.2.10"
   dependencies:
     "@types/react-reconciler": ^0.28.2
-    its-fine: ^1.0.6
+    its-fine: ^1.1.1
     react-reconciler: ~0.29.0
     scheduler: ^0.23.0
   peerDependencies:
     konva: ^8.0.1 || ^7.2.5 || ^9.0.0
     react: ">=18.0.0"
     react-dom: ">=18.0.0"
-  checksum: 40c780ac69c9d03ed8a4e6a43ff450e6fab12781b03d511b1cbb670a01a0286c2efc2e05c56bbbd7cd2e7980996fff6ebaf36c835fa6b316b3937be8f30afafd
+  checksum: 6dfe7701c7b67efcb0279f1f7986995a033a1fad3891fe75faf3a91c8df8a9422febf2a21c80f31811869b272484a1a785047727b269c3b3d7a15b074c535071
   languageName: node
   linkType: hard
 
