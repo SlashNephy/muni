@@ -7876,9 +7876,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:10.12.23":
-  version: 10.12.23
-  resolution: "framer-motion@npm:10.12.23"
+"framer-motion@npm:10.15.1":
+  version: 10.15.1
+  resolution: "framer-motion@npm:10.15.1"
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     tslib: ^2.4.0
@@ -7893,7 +7893,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: 1cbc0a812ec53aaa6f9acb3c15ffa59258e79417a32c0b29d912023f5ed38254dafc1bb21b73936e14cc973036691ff4a8408a5af56d1dbcd7dd8165e956e018
+  checksum: b8b08561d13452be63e44f12541ff1e2c620f016522bbfb65b80b4cca27e83a85e032aebbcc38c57667ffac90ec0f63a25e73c83730e50b8ca85b85134776be0
   languageName: node
   linkType: hard
 
@@ -9956,7 +9956,7 @@ __metadata:
     "@vitejs/plugin-react-swc": 3.3.2
     concurrently: 8.2.0
     eslint: 8.46.0
-    framer-motion: 10.12.23
+    framer-motion: 10.15.1
     i18next: 22.4.15
     i18next-browser-languagedetector: 7.0.2
     konva: 8.4.3
