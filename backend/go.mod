@@ -8,7 +8,7 @@ require (
 	github.com/joho/godotenv v1.5.1
 	go.uber.org/zap v1.25.0
 	google.golang.org/grpc v1.57.0
-	google.golang.org/protobuf v1.30.0
+	google.golang.org/protobuf v1.31.0
 )
 
 require (
