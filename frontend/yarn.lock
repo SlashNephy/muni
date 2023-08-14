@@ -4441,10 +4441,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.16.20":
-  version: 18.16.20
-  resolution: "@types/node@npm:18.16.20"
-  checksum: 00ea5668e12047447b20bb31408ae717823e5b879c4c6296036216756874b2dc7976086343ffb6a717eb52e8d73dc6972d90b9134ef464b7361673228a02ed41
+"@types/node@npm:18.17.5":
+  version: 18.17.5
+  resolution: "@types/node@npm:18.17.5"
+  checksum: b8c658a99234b99425243c324b641ed7b9ceb6bee6b06421fdc9bb7c58f9a5552e353225cc549e6982462ac384abe1985022ed76e2e4728797f59b21f659ca2b
   languageName: node
   linkType: hard
 
@@ -9964,7 +9964,7 @@ __metadata:
     "@storybook/testing-library": 0.2.0
     "@tabler/icons-react": 2.30.0
     "@tanstack/react-query": 4.32.6
-    "@types/node": 18.16.20
+    "@types/node": 18.17.5
     "@types/prop-types": 15
     "@types/react": 18.2.20
     "@types/react-dom": 18.2.7
