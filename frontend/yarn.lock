@@ -10195,7 +10195,7 @@ __metadata:
     react-konva: 18.2.10
     react-rnd: 10.4.1
     react-router-dom: 6.15.0
-    react-screen-wake-lock: 3.0.1
+    react-screen-wake-lock: 3.0.2
     recoil: 0.7.7
     storybook: 7.3.2
     typescript: 5.2.2
@@ -11325,12 +11325,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-screen-wake-lock@npm:3.0.1":
-  version: 3.0.1
-  resolution: "react-screen-wake-lock@npm:3.0.1"
+"react-screen-wake-lock@npm:3.0.2":
+  version: 3.0.2
+  resolution: "react-screen-wake-lock@npm:3.0.2"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 2240f011906ffcb2636e13ab4567af059c5142580f47c330312b7dd1ea5ccae8c8b6b39efbef2d079555a33f934cdec51c04836ebdab8e21245e5c95d57c17f6
+  checksum: ab1de21ebc8da8fb0b90d00348f3ad50bdbd20c5d70a950fb2cff9ea5b937bf6c1693d9d864b7b8fb2ceb67d390c5e19fe389abde6d9cde07f7cdd4b13554906
   languageName: node
   linkType: hard
 
