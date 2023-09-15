@@ -31,7 +31,7 @@
     "@protobuf-ts/grpcweb-transport": "2.9.1",
     "@protobuf-ts/runtime": "2.9.1",
     "@tabler/icons-react": "2.34.0",
-    "@tanstack/react-query": "4.35.0",
+    "@tanstack/react-query": "4.35.3",
     "@u-wave/react-vimeo": "0.9.10",
     "@u-wave/react-youtube": "0.7.4",
     "framer-motion": "10.16.4",
