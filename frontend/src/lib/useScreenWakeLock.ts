@@ -19,6 +19,7 @@ export const useScreenWakeLock = (
           request('screen').catch(console.error)
           setWasRequested(true)
         }
+
         return
       case 'hidden':
         onHidden()
