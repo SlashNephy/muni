@@ -59,7 +59,7 @@
     "@storybook/react": "7.4.6",
     "@storybook/react-vite": "7.4.6",
     "@storybook/testing-library": "0.2.2",
-    "@types/node": "18.18.3",
+    "@types/node": "18.18.4",
     "@types/prop-types": "15",
     "@types/react": "18.2.23",
     "@types/react-dom": "18.2.8",
