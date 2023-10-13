@@ -7,7 +7,7 @@ require (
 	github.com/grpc-ecosystem/go-grpc-middleware v1.4.0
 	github.com/joho/godotenv v1.5.1
 	go.uber.org/zap v1.26.0
-	google.golang.org/grpc v1.58.2
+	google.golang.org/grpc v1.58.3
 	google.golang.org/protobuf v1.31.0
 )
 
