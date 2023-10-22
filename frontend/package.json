@@ -70,7 +70,7 @@
     "prop-types": "15.8.1",
     "storybook": "7.4.6",
     "typescript": "5.2.2",
-    "vite": "4.4.11"
+    "vite": "4.5.0"
   },
   "packageManager": "yarn@3.6.4",
   "eslintConfig": {
