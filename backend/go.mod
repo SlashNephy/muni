@@ -3,7 +3,7 @@ module github.com/SlashNephy/muni/backend
 go 1.19
 
 require (
-	github.com/caarlos0/env/v7 v7.1.0
+	github.com/caarlos0/env/v8 v8.0.0
 	github.com/grpc-ecosystem/go-grpc-middleware v1.4.0
 	github.com/joho/godotenv v1.5.1
 	go.uber.org/zap v1.26.0
