@@ -43,7 +43,7 @@
     "react-i18next": "12.3.1",
     "react-konva": "18.2.10",
     "react-rnd": "10.4.1",
-    "react-router-dom": "6.17.0",
+    "react-router-dom": "6.18.0",
     "react-screen-wake-lock": "3.0.2",
     "recoil": "0.7.7",
     "zod": "3.22.4"
