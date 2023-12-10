@@ -2460,17 +2460,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protobuf-ts/grpcweb-transport@npm:2.9.1":
-  version: 2.9.1
-  resolution: "@protobuf-ts/grpcweb-transport@npm:2.9.1"
+"@protobuf-ts/grpcweb-transport@npm:2.9.3":
+  version: 2.9.3
+  resolution: "@protobuf-ts/grpcweb-transport@npm:2.9.3"
   dependencies:
-    "@protobuf-ts/runtime": ^2.9.1
-    "@protobuf-ts/runtime-rpc": ^2.9.1
-  checksum: 9b9090faa4e5f0496cb6978d606eb9b06064cd31680b2709aa93c7800e798a47eb7f7bf73c25338c96b1b08a7046e8bc3e9bb51fafc88741bb5c9e127122e373
+    "@protobuf-ts/runtime": ^2.9.3
+    "@protobuf-ts/runtime-rpc": ^2.9.3
+  checksum: 1bb017a91c0728fe4919e1249c45546062e8d5f7fc5697b454f39a45cdfd52c092480eccf1bd485a06cc3e0e93d8a7076d4db751291fdbefc67ee7f371f8f249
   languageName: node
   linkType: hard
 
-"@protobuf-ts/runtime-rpc@npm:^2.9.1":
+"@protobuf-ts/runtime-rpc@npm:^2.9.3":
   version: 2.9.3
   resolution: "@protobuf-ts/runtime-rpc@npm:2.9.3"
   dependencies:
@@ -2486,7 +2486,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protobuf-ts/runtime@npm:^2.9.1, @protobuf-ts/runtime@npm:^2.9.3":
+"@protobuf-ts/runtime@npm:^2.9.3":
   version: 2.9.3
   resolution: "@protobuf-ts/runtime@npm:2.9.3"
   checksum: 32d2f446794ad293e120bf7a3a55a874810bdb474eee0493411a2d6173ec862fce9d0cd15db9579fe4c8b253ee5383b9473a8bd0d726c41847b87116c11ae7cd
@@ -9995,7 +9995,7 @@ __metadata:
     "@mantine/nprogress": 5.10.5
     "@mantine/spotlight": 5.10.5
     "@marsidev/react-turnstile": 0.4.0
-    "@protobuf-ts/grpcweb-transport": 2.9.1
+    "@protobuf-ts/grpcweb-transport": 2.9.3
     "@protobuf-ts/runtime": 2.9.1
     "@slashnephy/eslint-config": 2.0.78
     "@slashnephy/prettier-config": 1.0.58
