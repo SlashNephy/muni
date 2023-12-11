@@ -2479,14 +2479,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protobuf-ts/runtime@npm:2.9.1":
-  version: 2.9.1
-  resolution: "@protobuf-ts/runtime@npm:2.9.1"
-  checksum: 8507103d7bf790c57c383bfc711e1c2766fab34c4a4d0ec30395f6da8f06e86a9e8b7af0f00cf19a8a0ecaf2feaf75cf3787ee1fd1d1d8ecedba5fc290113e15
-  languageName: node
-  linkType: hard
-
-"@protobuf-ts/runtime@npm:^2.9.3":
+"@protobuf-ts/runtime@npm:2.9.3, @protobuf-ts/runtime@npm:^2.9.3":
   version: 2.9.3
   resolution: "@protobuf-ts/runtime@npm:2.9.3"
   checksum: 32d2f446794ad293e120bf7a3a55a874810bdb474eee0493411a2d6173ec862fce9d0cd15db9579fe4c8b253ee5383b9473a8bd0d726c41847b87116c11ae7cd
@@ -9996,7 +9989,7 @@ __metadata:
     "@mantine/spotlight": 5.10.5
     "@marsidev/react-turnstile": 0.4.0
     "@protobuf-ts/grpcweb-transport": 2.9.3
-    "@protobuf-ts/runtime": 2.9.1
+    "@protobuf-ts/runtime": 2.9.3
     "@slashnephy/eslint-config": 2.0.79
     "@slashnephy/prettier-config": 1.0.59
     "@storybook/addon-essentials": 7.6.4
