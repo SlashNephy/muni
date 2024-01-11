@@ -2642,13 +2642,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@marsidev/react-turnstile@npm:0.4.0":
-  version: 0.4.0
-  resolution: "@marsidev/react-turnstile@npm:0.4.0"
+"@marsidev/react-turnstile@npm:0.4.1":
+  version: 0.4.1
+  resolution: "@marsidev/react-turnstile@npm:0.4.1"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
-  checksum: 04b17637f3e2891554ce2e8447c5d2abaff798655159d98b20f782c19e606bcf74494418c9598065da51770b612175d969b69214b11de37f92889587b2e1bb74
+  checksum: 18fb1f99be61204a6f46945bd3f61a52c11a338aa1ae3b36008f6dff08ff225caf5052e73e5f904bfaf373cc2379783fdb5b854c17ed44d7978ea43d3c667851
   languageName: node
   linkType: hard
 
@@ -10875,7 +10875,7 @@ __metadata:
     "@mantine/notifications": 5.10.5
     "@mantine/nprogress": 5.10.5
     "@mantine/spotlight": 5.10.5
-    "@marsidev/react-turnstile": 0.4.0
+    "@marsidev/react-turnstile": 0.4.1
     "@protobuf-ts/grpcweb-transport": 2.9.3
     "@protobuf-ts/runtime": 2.9.3
     "@slashnephy/eslint-config": 2.1.4
