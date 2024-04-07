@@ -27,7 +27,7 @@
     "@mantine/notifications": "5.10.5",
     "@mantine/nprogress": "5.10.5",
     "@mantine/spotlight": "5.10.5",
-    "@marsidev/react-turnstile": "0.5.3",
+    "@marsidev/react-turnstile": "0.5.4",
     "@protobuf-ts/grpcweb-transport": "2.9.4",
     "@protobuf-ts/runtime": "2.9.4",
     "@tabler/icons-react": "2.47.0",
