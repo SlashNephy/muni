@@ -1,4 +1,4 @@
-FROM node:21.7.3-bullseye-slim@sha256:1691c8869263157f44ac8288c77372891a3c88f8d465145831b72e3b73e50415 AS development
+FROM node:21.7.3-bullseye-slim@sha256:65881997e49f9118732af6e10e88cd6b632df8c8f1b0d47009c604103a46d955 AS development
 WORKDIR /app
 
 CMD ["bash", "-c", "yarn install --immutable && yarn dev --host 0.0.0.0"]
