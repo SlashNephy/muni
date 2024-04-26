@@ -46,7 +46,7 @@
     "react-router-dom": "6.23.0",
     "react-screen-wake-lock": "3.0.2",
     "recoil": "0.7.7",
-    "zod": "3.22.5"
+    "zod": "3.23.4"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "11.11.0",
