@@ -8,7 +8,7 @@ RUN go mod download
 COPY ./ ./
 RUN make build
 
-FROM debian:bullseye-slim@sha256:0e75382930ceb533e2f438071307708e79dc86d9b8e433cc6dd1a96872f2651d AS production
+FROM debian:bullseye-slim@sha256:4e9b634e893784ba341cb177e5c58afebd7e8be7675a9c4d530b5e39c30235bd AS production
 WORKDIR /app
 
 RUN groupadd -g 1000 app && useradd -u 1000 -g app app
