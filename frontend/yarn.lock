@@ -5180,9 +5180,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@u-wave/react-vimeo@npm:0.9.10":
-  version: 0.9.10
-  resolution: "@u-wave/react-vimeo@npm:0.9.10"
+"@u-wave/react-vimeo@npm:0.9.11":
+  version: 0.9.11
+  resolution: "@u-wave/react-vimeo@npm:0.9.11"
   dependencies:
     "@types/react": ^17.0.0 || ^18.0.0
     "@types/vimeo__player": ^2.10.0
@@ -5190,7 +5190,7 @@ __metadata:
     prop-types: ^15.7.2
   peerDependencies:
     react: ^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: c6c2734e01e550010d32f38d15bf9f06efefb96943d6e417747cb554f39e399c3c44c7f3525c6060b2a506b6a463eee8da197799788882b49cf25595c7b89880
+  checksum: 65dbba6e5bffe7242f8f925eaff047cfc8addb7d11b036f237c94bad64b6030812de254ea8b8f8f62f776a2c4d3696b5ee535762769c3738b793419b2052986d
   languageName: node
   linkType: hard
 
@@ -10543,7 +10543,7 @@ __metadata:
     "@types/prop-types": 15
     "@types/react": 18.3.3
     "@types/react-dom": 18.3.0
-    "@u-wave/react-vimeo": 0.9.10
+    "@u-wave/react-vimeo": 0.9.11
     "@u-wave/react-youtube": 0.7.4
     "@vitejs/plugin-react-swc": 3.7.0
     concurrently: 8.2.2
