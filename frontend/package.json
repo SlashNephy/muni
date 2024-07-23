@@ -20,7 +20,7 @@
     "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
-    "@emotion/react": "11.11.4",
+    "@emotion/react": "11.13.0",
     "@mantine/core": "5.10.5",
     "@mantine/hooks": "5.10.5",
     "@mantine/modals": "5.10.5",
@@ -49,7 +49,7 @@
     "zod": "3.23.8"
   },
   "devDependencies": {
-    "@emotion/babel-plugin": "11.11.0",
+    "@emotion/babel-plugin": "11.12.0",
     "@slashnephy/eslint-config": "2.3.84",
     "@slashnephy/prettier-config": "1.0.73",
     "@storybook/addon-essentials": "8.2.5",
