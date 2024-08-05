@@ -9107,7 +9107,7 @@ __metadata:
     react-dom: 18.3.1
     react-i18next: 12.3.1
     react-konva: 18.2.10
-    react-rnd: 10.4.11
+    react-rnd: 10.4.12
     react-router-dom: 6.26.0
     react-screen-wake-lock: 3.0.2
     recoil: 0.7.7
@@ -10057,9 +10057,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-rnd@npm:10.4.11":
-  version: 10.4.11
-  resolution: "react-rnd@npm:10.4.11"
+"react-rnd@npm:10.4.12":
+  version: 10.4.12
+  resolution: "react-rnd@npm:10.4.12"
   dependencies:
     re-resizable: 6.9.17
     react-draggable: 4.4.6
@@ -10067,7 +10067,7 @@ __metadata:
   peerDependencies:
     react: ">=16.3.0"
     react-dom: ">=16.3.0"
-  checksum: 67ad088ffcd363d834bb92c6aa61d7c649be34a2174dfe95632e28473935f81aeba5ca7c362a80d043d5a6bb24c255b8ab767bc7046ae3d2c5b71cd7f4399ee7
+  checksum: 45eea986f2a29773d0340cc45162ea3c6a0a61e13c95bdebdf1c987b46214867ed802d1318844144666caeafe965e9393a6db1b6ccd6212710781f6fa603cce6
   languageName: node
   linkType: hard
 
