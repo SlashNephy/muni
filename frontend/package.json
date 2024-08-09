@@ -72,7 +72,7 @@
     "typescript": "5.5.4",
     "vite": "5.3.5"
   },
-  "packageManager": "yarn@3.8.4",
+  "packageManager": "yarn@4.4.0",
   "eslintConfig": {
     "extends": [
       "@slashnephy/eslint-config"
