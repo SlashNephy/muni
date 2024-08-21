@@ -3931,12 +3931,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.14.15":
-  version: 20.14.15
-  resolution: "@types/node@npm:20.14.15"
+"@types/node@npm:20.16.1":
+  version: 20.16.1
+  resolution: "@types/node@npm:20.16.1"
   dependencies:
-    undici-types: ~5.26.4
-  checksum: 0407600c1a426efd3e97c94ef1c13edce453142a06ea4be7102bf7be3e907ea578872c7795988a72e981b8ffe942f8cfaafd98552ba82915cd6f963dd1fa9adc
+    undici-types: ~6.19.2
+  checksum: 2b8f30f416f5c1851ffa8a13ef6c464a5e355edfd763713c22813a7839f6419a64e27925f9e89c972513d78432263179332f0bffb273d16498233bfdf495d096
   languageName: node
   linkType: hard
 
@@ -9129,7 +9129,7 @@ __metadata:
     "@storybook/testing-library": 0.2.2
     "@tabler/icons-react": 2.47.0
     "@tanstack/react-query": 4.36.1
-    "@types/node": 20.14.15
+    "@types/node": 20.16.1
     "@types/prop-types": 15
     "@types/react": 18.3.3
     "@types/react-dom": 18.3.0
