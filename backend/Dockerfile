@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1@sha256:865e5dd094beca432e8c0a1d5e1c465db5f998dca4e439981029b3b81fb39ed5
-FROM golang:1.23.2-bullseye@sha256:ebaf58d74f200c27dce0181203a1347e41b5c159c9aa0517a95bec594aabbde4 AS build
+FROM golang:1.23.2-bullseye@sha256:31323334e6c2a6d8699353b88f743c432028c2138453a1278e9ee7e865b03769 AS build
 WORKDIR /app
 
 COPY go.mod go.sum ./
@@ -22,7 +22,7 @@ USER app
 COPY --from=build /app/muni-backend ./
 CMD ["./muni-backend"]
 
-FROM golang:1.23.2-bullseye@sha256:ebaf58d74f200c27dce0181203a1347e41b5c159c9aa0517a95bec594aabbde4 AS development
+FROM golang:1.23.2-bullseye@sha256:31323334e6c2a6d8699353b88f743c432028c2138453a1278e9ee7e865b03769 AS development
 WORKDIR /app
 
 CMD ["make", "dev"]
