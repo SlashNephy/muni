@@ -20,7 +20,7 @@
     "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
-    "@emotion/react": "11.13.3",
+    "@emotion/react": "11.13.5",
     "@mantine/core": "5.10.5",
     "@mantine/hooks": "5.10.5",
     "@mantine/modals": "5.10.5",
