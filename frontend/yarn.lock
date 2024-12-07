@@ -5641,12 +5641,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next-browser-languagedetector@npm:7.2.1":
-  version: 7.2.1
-  resolution: "i18next-browser-languagedetector@npm:7.2.1"
+"i18next-browser-languagedetector@npm:8.0.1":
+  version: 8.0.1
+  resolution: "i18next-browser-languagedetector@npm:8.0.1"
   dependencies:
     "@babel/runtime": ^7.23.2
-  checksum: 159958be2d8f19444e9378512c36c2bf13a8ab85eddac2fc0000198a03dbc28c73a6f44594ab040b242bdc82dfeabb7c1ab805884b5438ee0a48a8e2b52ca062
+  checksum: 828810d4a330569f0cce66da679f943cbd4d7295e580122db085c9843057f4ef817ebab5af249ad884b4624a768b00a434408448028b7269a6fe0b61b8db82aa
   languageName: node
   linkType: hard
 
@@ -6652,7 +6652,7 @@ __metadata:
     eslint: 8.57.1
     framer-motion: 10.18.0
     i18next: 22.5.1
-    i18next-browser-languagedetector: 7.2.1
+    i18next-browser-languagedetector: 8.0.1
     konva: 8.4.3
     prettier: 3.4.2
     prop-types: 15.8.1
