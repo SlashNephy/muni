@@ -6,7 +6,7 @@ toolchain go1.23.4
 
 require (
 	github.com/caarlos0/env/v7 v7.1.0
-	github.com/grpc-ecosystem/go-grpc-middleware v1.4.0
+	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.2.0
 	github.com/joho/godotenv v1.5.1
 	go.uber.org/zap v1.27.0
 	google.golang.org/grpc v1.68.1
