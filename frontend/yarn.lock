@@ -2503,7 +2503,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*":
+"@types/react@npm:*, @types/react@npm:^17.0.0 || ^18.0.0 || ^19.0.0":
   version: 19.0.1
   resolution: "@types/react@npm:19.0.1"
   dependencies:
@@ -2512,7 +2512,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:18.3.14, @types/react@npm:^17.0.0 || ^18.0.0, @types/react@npm:^18":
+"@types/react@npm:18.3.14, @types/react@npm:^18":
   version: 18.3.14
   resolution: "@types/react@npm:18.3.14"
   dependencies:
@@ -2951,17 +2951,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@u-wave/react-vimeo@npm:0.9.11":
-  version: 0.9.11
-  resolution: "@u-wave/react-vimeo@npm:0.9.11"
+"@u-wave/react-vimeo@npm:0.9.12":
+  version: 0.9.12
+  resolution: "@u-wave/react-vimeo@npm:0.9.12"
   dependencies:
-    "@types/react": ^17.0.0 || ^18.0.0
+    "@types/react": ^17.0.0 || ^18.0.0 || ^19.0.0
     "@types/vimeo__player": ^2.10.0
     "@vimeo/player": ^2.16.4
     prop-types: ^15.7.2
   peerDependencies:
-    react: ^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 65dbba6e5bffe7242f8f925eaff047cfc8addb7d11b036f237c94bad64b6030812de254ea8b8f8f62f776a2c4d3696b5ee535762769c3738b793419b2052986d
+    react: ^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 110a7b186ba7ae0afce5ff56f607e07b71582ff9d42db8fedb4e9b7b2f0d46fbec903d01b561a3696eb758aada6ba42c5f8977403548c6f09f8b7aa764e81935
   languageName: node
   linkType: hard
 
@@ -6665,7 +6665,7 @@ __metadata:
     "@types/prop-types": 15
     "@types/react": 18.3.14
     "@types/react-dom": 18.3.2
-    "@u-wave/react-vimeo": 0.9.11
+    "@u-wave/react-vimeo": 0.9.12
     "@u-wave/react-youtube": 0.7.4
     "@vitejs/plugin-react-swc": 3.7.2
     concurrently: 9.1.0
