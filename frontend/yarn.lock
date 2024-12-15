@@ -2494,7 +2494,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-reconciler@npm:^0.28.0, @types/react-reconciler@npm:^0.28.2":
+"@types/react-reconciler@npm:^0.28.0, @types/react-reconciler@npm:^0.28.8":
   version: 0.28.9
   resolution: "@types/react-reconciler@npm:0.28.9"
   peerDependencies:
@@ -6104,7 +6104,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"its-fine@npm:^1.1.1":
+"its-fine@npm:^1.2.5":
   version: 1.2.5
   resolution: "its-fine@npm:1.2.5"
   dependencies:
@@ -6693,7 +6693,7 @@ __metadata:
     react: 18.3.1
     react-dom: 18.3.1
     react-i18next: 12.3.1
-    react-konva: 18.2.10
+    react-konva: 19.0.1
     react-rnd: 10.4.13
     react-router-dom: 6.28.0
     react-screen-wake-lock: 3.0.2
@@ -7292,31 +7292,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-konva@npm:18.2.10":
-  version: 18.2.10
-  resolution: "react-konva@npm:18.2.10"
+"react-konva@npm:19.0.1":
+  version: 19.0.1
+  resolution: "react-konva@npm:19.0.1"
   dependencies:
-    "@types/react-reconciler": ^0.28.2
-    its-fine: ^1.1.1
-    react-reconciler: ~0.29.0
-    scheduler: ^0.23.0
+    "@types/react-reconciler": ^0.28.8
+    its-fine: ^1.2.5
+    react-reconciler: 0.31.0
+    scheduler: 0.25.0
   peerDependencies:
     konva: ^8.0.1 || ^7.2.5 || ^9.0.0
-    react: ">=18.0.0"
-    react-dom: ">=18.0.0"
-  checksum: 6dfe7701c7b67efcb0279f1f7986995a033a1fad3891fe75faf3a91c8df8a9422febf2a21c80f31811869b272484a1a785047727b269c3b3d7a15b074c535071
+    react: ^19.0.0
+    react-dom: ^19.0.0
+  checksum: 0b7bf68040ea4190ce794a017f8474c93a902db7df5402cd30482e7a6abd35592496dee566c0c1d26b8045f90875cfd7a833bca20a2782cbe21ef66a59a8a4d5
   languageName: node
   linkType: hard
 
-"react-reconciler@npm:~0.29.0":
-  version: 0.29.2
-  resolution: "react-reconciler@npm:0.29.2"
+"react-reconciler@npm:0.31.0":
+  version: 0.31.0
+  resolution: "react-reconciler@npm:0.31.0"
   dependencies:
-    loose-envify: ^1.1.0
-    scheduler: ^0.23.2
+    scheduler: ^0.25.0
   peerDependencies:
-    react: ^18.3.1
-  checksum: e552727f97b5d61ef7a3e9b632056934055aba1592b09913f3395c3586a6bb47a368858bd8f76c359e58f6e9e44a6ee7eec4bd27dd6d931504b7da201d98b536
+    react: ^19.0.0
+  checksum: 820c4e4003c5615849bf0cda97d8a55b99af2bb59cc0825882b727f0ad0c4bf4581bb3d25e00beca1164203dbc172f0a8c4725e7aa2fb85e025938722384a84e
   languageName: node
   linkType: hard
 
@@ -7750,7 +7749,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scheduler@npm:^0.23.0, scheduler@npm:^0.23.2":
+"scheduler@npm:0.25.0, scheduler@npm:^0.25.0":
+  version: 0.25.0
+  resolution: "scheduler@npm:0.25.0"
+  checksum: b7bb9fddbf743e521e9aaa5198a03ae823f5e104ebee0cb9ec625392bb7da0baa1c28ab29cee4b1e407a94e76acc6eee91eeb749614f91f853efda2613531566
+  languageName: node
+  linkType: hard
+
+"scheduler@npm:^0.23.2":
   version: 0.23.2
   resolution: "scheduler@npm:0.23.2"
   dependencies:
