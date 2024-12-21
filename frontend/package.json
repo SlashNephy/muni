@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@emotion/babel-plugin": "11.13.5",
-    "@slashnephy/eslint-config": "2.3.157",
+    "@slashnephy/eslint-config": "2.3.158",
     "@slashnephy/prettier-config": "1.0.73",
     "@storybook/addon-essentials": "8.4.7",
     "@storybook/addon-interactions": "8.4.7",
