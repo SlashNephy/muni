@@ -5729,12 +5729,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:22.5.1":
-  version: 22.5.1
-  resolution: "i18next@npm:22.5.1"
+"i18next@npm:24.2.1":
+  version: 24.2.1
+  resolution: "i18next@npm:24.2.1"
   dependencies:
-    "@babel/runtime": ^7.20.6
-  checksum: 175f8ab7fac2abcee147b00cc2d8e7d4fa9b05cdc227f02cac841fc2fd9545ed4a6d88774f594f8ad12dc944e4d34cc8e88aa00c8b9947baef9e859d93abd305
+    "@babel/runtime": ^7.23.2
+  peerDependencies:
+    typescript: ^5
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 6c4b0e5829381fb66f360ec1827db4181335ecb87529710cca3175eaebbbc037f919eb230f07d09a62a00d7bd8b9912c32123fb8a168ca275b8ca916048c763f
   languageName: node
   linkType: hard
 
@@ -6721,7 +6726,7 @@ __metadata:
     concurrently: 9.1.2
     eslint: 8.57.1
     framer-motion: 10.18.0
-    i18next: 22.5.1
+    i18next: 24.2.1
     i18next-browser-languagedetector: 7.2.2
     konva: 8.4.3
     prettier: 3.4.2
