@@ -276,22 +276,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/is-prop-valid@npm:^0.8.2":
-  version: 0.8.8
-  resolution: "@emotion/is-prop-valid@npm:0.8.8"
-  dependencies:
-    "@emotion/memoize": 0.7.4
-  checksum: bb7ec6d48c572c540e24e47cc94fc2f8dec2d6a342ae97bc9c8b6388d9b8d283862672172a1bb62d335c02662afe6291e10c71e9b8642664a8b43416cdceffac
-  languageName: node
-  linkType: hard
-
-"@emotion/memoize@npm:0.7.4":
-  version: 0.7.4
-  resolution: "@emotion/memoize@npm:0.7.4"
-  checksum: 4e3920d4ec95995657a37beb43d3f4b7d89fed6caa2b173a4c04d10482d089d5c3ea50bbc96618d918b020f26ed6e9c4026bbd45433566576c1f7b056c3271dc
-  languageName: node
-  linkType: hard
-
 "@emotion/memoize@npm:^0.9.0":
   version: 0.9.0
   resolution: "@emotion/memoize@npm:0.9.0"
@@ -5281,24 +5265,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:10.18.0":
-  version: 10.18.0
-  resolution: "framer-motion@npm:10.18.0"
+"framer-motion@npm:12.0.0":
+  version: 12.0.0
+  resolution: "framer-motion@npm:12.0.0"
   dependencies:
-    "@emotion/is-prop-valid": ^0.8.2
+    motion-dom: ^12.0.0
+    motion-utils: ^12.0.0
     tslib: ^2.4.0
   peerDependencies:
-    react: ^18.0.0
-    react-dom: ^18.0.0
-  dependenciesMeta:
+    "@emotion/is-prop-valid": "*"
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
     "@emotion/is-prop-valid":
       optional: true
-  peerDependenciesMeta:
     react:
       optional: true
     react-dom:
       optional: true
-  checksum: b43f1edcfc8c2226e3325517612d2abb7455455c4d2232d62499d70a603a51ffdd6a810aa7b5e783a25860856ec6c6e5b3bcf749846facedc54a063f9a548f0b
+  checksum: 0f6719099e303b16fbd9e97a451790e899ef131f705db1bdd503e82eded4483b34ba1beadb923159047b4b85927126fab1945d88d68a8f117e62b0e7fba915a6
   languageName: node
   linkType: hard
 
@@ -6707,6 +6692,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"motion-dom@npm:^12.0.0":
+  version: 12.0.0
+  resolution: "motion-dom@npm:12.0.0"
+  dependencies:
+    motion-utils: ^12.0.0
+  checksum: 58b6c7e678ac29b0d68b966e3e5879d2b3cc6b85ad4e3d141013e44666919669c42e9344508f91a4d35c3c6ddb71660a92a04414998046d10c2309bb630ebeb0
+  languageName: node
+  linkType: hard
+
+"motion-utils@npm:^12.0.0":
+  version: 12.0.0
+  resolution: "motion-utils@npm:12.0.0"
+  checksum: 0b6ad4e10206e32a27fdd857df61ffdf929390eebda1d4832f6c85776677c7f8decdaf0f1eea10aa19e202f43a828bb32cade6e74a55ce7aec9d0c3fbd20dcf4
+  languageName: node
+  linkType: hard
+
 "ms@npm:^2.1.1, ms@npm:^2.1.3":
   version: 2.1.3
   resolution: "ms@npm:2.1.3"
@@ -6749,7 +6750,7 @@ __metadata:
     "@vitejs/plugin-react-swc": 3.7.2
     concurrently: 9.1.2
     eslint: 8.57.1
-    framer-motion: 10.18.0
+    framer-motion: 12.0.0
     i18next: 22.5.1
     i18next-browser-languagedetector: 7.2.2
     konva: 8.4.3
