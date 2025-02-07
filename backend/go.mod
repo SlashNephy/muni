@@ -2,7 +2,7 @@ module github.com/SlashNephy/muni/backend
 
 go 1.22.7
 
-toolchain go1.23.5
+toolchain go1.23.6
 
 require (
 	github.com/caarlos0/env/v7 v7.1.0
