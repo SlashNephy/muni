@@ -6336,10 +6336,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"konva@npm:8.4.3":
-  version: 8.4.3
-  resolution: "konva@npm:8.4.3"
-  checksum: 5fc805e2c51a3eab4e08d3752ca43a6cd12917da5d44b73d9ce3b022fcfe84f215eedb44082b0d9fa9e456f029673e42db6a72dcf123e290dfe68e971150a6e3
+"konva@npm:9.3.18":
+  version: 9.3.18
+  resolution: "konva@npm:9.3.18"
+  checksum: de0729015d7a34bfd2703234041723d1beab1e2422181bc0cf68f4ac1333203735044eb5ba7ca369c05401649294c2b43d571bae02b4f8dacf65a9df45101b60
   languageName: node
   linkType: hard
 
@@ -6733,7 +6733,7 @@ __metadata:
     framer-motion: 10.18.0
     i18next: 22.5.1
     i18next-browser-languagedetector: 7.2.2
-    konva: 8.4.3
+    konva: 9.3.18
     prettier: 3.5.1
     prop-types: 15.8.1
     react: 18.3.1
