@@ -1,3 +1,3 @@
-FROM envoyproxy/envoy:v1.27.0@sha256:3c607686b205188dd035e1a6f30b830ce4e2c1b0dfecac2ccf150796c29abf35
+FROM envoyproxy/envoy:v1.34.0@sha256:45d37d848802f98a5647cb7522b4c1c42e0e0e775913d8e253ef3a5856bef986
 
 COPY ./envoy.yaml /etc/envoy/
