@@ -190,6 +190,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.26.10":
+  version: 7.27.1
+  resolution: "@babel/runtime@npm:7.27.1"
+  checksum: 11339838a54783e5b14e04d94d7a4d032e9965c5823f3f687e41556fa40344ae7aeb57c535720b7a74ab3e8217def7834a6f1a665ee55bbb3befede141419913
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.26.9, @babel/template@npm:^7.27.0":
   version: 7.27.0
   resolution: "@babel/template@npm:7.27.0"
@@ -6076,12 +6083,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:22.5.1":
-  version: 22.5.1
-  resolution: "i18next@npm:22.5.1"
+"i18next@npm:25.1.2":
+  version: 25.1.2
+  resolution: "i18next@npm:25.1.2"
   dependencies:
-    "@babel/runtime": ^7.20.6
-  checksum: 175f8ab7fac2abcee147b00cc2d8e7d4fa9b05cdc227f02cac841fc2fd9545ed4a6d88774f594f8ad12dc944e4d34cc8e88aa00c8b9947baef9e859d93abd305
+    "@babel/runtime": ^7.26.10
+  peerDependencies:
+    typescript: ^5
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 7cb120bcee5e7ed9f8c20a7be8d75805ed9aeec0a879ed333e59c0ffd88d6cccfbb31253ce2e6b4c30183c54457096014efd71c1345f59b566ea024c67904f75
   languageName: node
   linkType: hard
 
@@ -7068,7 +7080,7 @@ __metadata:
     concurrently: 9.1.2
     eslint: 8.57.1
     framer-motion: 10.18.0
-    i18next: 22.5.1
+    i18next: 25.1.2
     i18next-browser-languagedetector: 7.2.2
     konva: 8.4.3
     prettier: 3.5.3
