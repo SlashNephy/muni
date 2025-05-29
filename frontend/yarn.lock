@@ -1331,29 +1331,36 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protobuf-ts/grpcweb-transport@npm:2.10.0":
-  version: 2.10.0
-  resolution: "@protobuf-ts/grpcweb-transport@npm:2.10.0"
+"@protobuf-ts/grpcweb-transport@npm:2.11.0":
+  version: 2.11.0
+  resolution: "@protobuf-ts/grpcweb-transport@npm:2.11.0"
   dependencies:
-    "@protobuf-ts/runtime": ^2.10.0
-    "@protobuf-ts/runtime-rpc": ^2.10.0
-  checksum: 8f2a920e5bb1b8698f942da28b131cb00aa9a5c8a667fca7bb8e2df69b799867a58e6321546c156c7610855efcfa5b9d7a01fe85256f466b7adc6577fb92abc2
+    "@protobuf-ts/runtime": ^2.11.0
+    "@protobuf-ts/runtime-rpc": ^2.11.0
+  checksum: db62c7a09c4b3c932498535c711bcc94d351438ba76a231e1e13a32c90e4f1c4ac6ccf76187f8fc557237a2489868453cb7572e620760daae162411aa93346d4
   languageName: node
   linkType: hard
 
-"@protobuf-ts/runtime-rpc@npm:^2.10.0":
-  version: 2.10.0
-  resolution: "@protobuf-ts/runtime-rpc@npm:2.10.0"
+"@protobuf-ts/runtime-rpc@npm:^2.11.0":
+  version: 2.11.0
+  resolution: "@protobuf-ts/runtime-rpc@npm:2.11.0"
   dependencies:
-    "@protobuf-ts/runtime": ^2.10.0
-  checksum: 512a24bb779e77bbba6ffa04de8ee739a527218c12077b61209c44606dd40d2b63cc71efac893601a732d8c5eaf58f78e8247354d0d046783a69db46ff6feb73
+    "@protobuf-ts/runtime": ^2.11.0
+  checksum: fc1b6ae60e8b520295a7b56b742aba9c547b63d2960ebfc361fce203d206f5efa0b4e5cddd9f4cc9c16422d7084e0c3e4f4bff604d8f5e477d318f776164f07e
   languageName: node
   linkType: hard
 
-"@protobuf-ts/runtime@npm:2.10.0, @protobuf-ts/runtime@npm:^2.10.0":
+"@protobuf-ts/runtime@npm:2.10.0":
   version: 2.10.0
   resolution: "@protobuf-ts/runtime@npm:2.10.0"
   checksum: cc48432b53ae728823f1cdb4bfdc834db52dc165e1e94c338da03cfc9df8cddc6176b57a46f6fa19292a12315347a91ea65da9b50858155b4c18d2f1f1fc0adc
+  languageName: node
+  linkType: hard
+
+"@protobuf-ts/runtime@npm:^2.11.0":
+  version: 2.11.0
+  resolution: "@protobuf-ts/runtime@npm:2.11.0"
+  checksum: 8c9badacf96c036b9759833b2032365b369352ce141431fc2f44d28543ba7f0f359187781f0b77591fe4051e5accb442c8a76174d63213bdcc72708447c2aea7
   languageName: node
   linkType: hard
 
@@ -7049,7 +7056,7 @@ __metadata:
     "@mantine/nprogress": 5.10.5
     "@mantine/spotlight": 5.10.5
     "@marsidev/react-turnstile": 0.7.2
-    "@protobuf-ts/grpcweb-transport": 2.10.0
+    "@protobuf-ts/grpcweb-transport": 2.11.0
     "@protobuf-ts/runtime": 2.10.0
     "@slashnephy/eslint-config": 2.3.204
     "@slashnephy/prettier-config": 1.0.73
