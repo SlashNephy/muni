@@ -7136,7 +7136,7 @@ __metadata:
     storybook: 9.0.6
     typescript: 5.8.3
     vite: 6.3.5
-    zod: 3.25.64
+    zod: 3.25.65
   languageName: unknown
   linkType: soft
 
@@ -9625,9 +9625,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:3.25.64":
-  version: 3.25.64
-  resolution: "zod@npm:3.25.64"
-  checksum: 9f0e86430ed52ef56930712485573454f9b8d64697e24e3139581489520993658d2dee5e939e9e820c1c720afa202fdca58a3ef096f8d91b0d04eb4285bc00ca
+"zod@npm:3.25.65":
+  version: 3.25.65
+  resolution: "zod@npm:3.25.65"
+  checksum: f986e19f9911cfe826ac9a6537bf8e7b112ecd324736f0976aad35058fcc95e0c1b9ec65b37b34aa50f441bb1579a0346f4ec0b2e3492f0bf47e3ce43ea84a45
   languageName: node
   linkType: hard
